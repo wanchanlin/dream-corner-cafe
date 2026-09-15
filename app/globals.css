@@ -1,26 +1,117 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --cream: #f9f6ee;
+  --sage: #a7b39a;
+  --terracotta: #d07f60;
+  --latte: #cbb59b;
+  --espresso: #4a3a2f;
+  --mist: #efe5d8;
+  --leaf-line: #75886d;
+  --soft-line: rgba(74, 58, 47, 0.16);
+  --background: var(--cream);
+  --foreground: var(--espresso);
+  --font-body-stack:
+    "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", "Segoe UI",
+    sans-serif;
+  --font-display-stack:
+    "Iowan Old Style", "Palatino Linotype", "Book Antiqua",
+    "Noto Serif TC", Georgia, serif;
+  --font-latin-stack:
+    "Avenir Next", Montserrat, "Helvetica Neue", Arial, sans-serif;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-cream: var(--cream);
+  --color-sage: var(--sage);
+  --color-terracotta: var(--terracotta);
+  --color-latte: var(--latte);
+  --color-espresso: var(--espresso);
+  --color-mist: var(--mist);
+  --font-sans: var(--font-body-stack);
+  --font-serif: var(--font-display-stack);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body-stack);
+}
+
+a,
+button {
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    opacity 180ms ease;
+}
+
+::selection {
+  background: rgba(208, 127, 96, 0.24);
+}
+
+.font-display {
+  font-family: var(--font-display-stack);
+}
+
+.font-latin {
+  font-family: var(--font-latin-stack);
+}
+
+.outline-button {
+  border: 1.5px solid var(--terracotta);
+  border-radius: 9999px;
+  color: var(--terracotta);
+}
+
+.section-kicker {
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.soft-card {
+  border: 1px solid var(--soft-line);
+  border-radius: 1.5rem;
+}
+
+.leaf-frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.leaf-frame::before,
+.leaf-frame::after {
+  content: "";
+  position: absolute;
+  background: rgba(167, 179, 154, 0.16);
+  border-radius: 9999px;
+  pointer-events: none;
+}
+
+.leaf-frame::before {
+  width: 14rem;
+  height: 14rem;
+  top: -6rem;
+  right: -4rem;
+}
+
+.leaf-frame::after {
+  width: 10rem;
+  height: 10rem;
+  bottom: -4rem;
+  left: -3rem;
+}
+
+@media (max-width: 767px) {
+  html {
+    scroll-padding-top: 5rem;
+  }
 }
