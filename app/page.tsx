@@ -78,11 +78,11 @@ export default function Home() {
       <header className="sticky top-0 z-40 border-b border-[color:var(--soft-line)] bg-cream/95 backdrop-blur-sm">
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-4 px-5 py-4 sm:px-8 md:flex-row md:items-center md:justify-between">
           <a href="#top" className="min-w-0">
-            <span className="font-display block text-2xl tracking-[0.08em] text-espresso sm:text-3xl">
+            <span className="font-display text-italic block text-2xl tracking-[0.08em] text-espresso sm:text-3xl">
               Dream Corner
             </span>
             <span className="font-latin mt-1 block text-[0.68rem] uppercase tracking-[0.32em] text-terracotta">
-              Qingpu, Taiwan
+             
             </span>
           </a>
           <nav

@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
+import { Homemade_Apple } from "next/font/google";
 import "./globals.css";
+
+const homemadeApple = Homemade_Apple({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-homemade-apple",
+});
 
 export const metadata: Metadata = {
   title: "Dream Corner | 青埔的溫暖咖啡角落",
@@ -9,8 +16,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="zh-Hant" className="h-full antialiased">
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html
+      lang="zh-Hant"
+      className={`${homemadeApple.variable} h-full antialiased`}
+    >
+      <body suppressHydrationWarning className="min-h-full flex flex-col">
+        {children}
+      </body>
     </html>
   );
 }
