@@ -4,6 +4,7 @@ import Link from "next/link";
 import { SiteFooter, SiteHeader } from "@/app/components/site-chrome";
 import {
   ChairIcon,
+  CornerSketchIllustration,
   CroissantIcon,
   CupIcon,
   LeafIcon,
@@ -151,6 +152,9 @@ export default function Home() {
                   priority
                   className="h-auto w-full object-cover"
                 />
+              </div>
+              <div className="pointer-events-none relative mt-4 ml-auto w-36 rotate-[-7deg] rounded-[1.75rem] border border-[rgba(208,127,96,0.2)] bg-[rgba(249,246,238,0.92)] p-3 text-terracotta shadow-[0_18px_45px_rgba(74,58,47,0.12)] sm:w-40 md:absolute md:-bottom-12 md:-left-4 md:mt-0 md:ml-0 md:w-44 lg:w-52">
+                <CornerSketchIllustration className="h-auto w-full" />
               </div>
               <div className="mt-4 flex items-center justify-between gap-4 border-t border-[color:var(--soft-line)] pt-4">
                 <p className="font-display text-xl text-terracotta sm:text-2xl">

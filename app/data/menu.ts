@@ -16,17 +16,18 @@ export type MenuCategory = {
 };
 
 export const menuPreviewNotice =
-  "菜單預覽，實際品項與價格以開幕公告為準。";
+  "This is a soft-launch menu preview. Final items, flavors, and pricing can still be adjusted before opening.";
 
 export const menuEditorialNote =
-  "目前可用的飲品名稱與價格來自品牌指南中的 menu style example；冰熱選項、客製內容與正式文案尚未提供，因此此頁先保留可編輯的菜單結構。";
+  "All menu content lives in this shared data file, so updating or adding drinks here will automatically refresh both the homepage preview and the full menu page.";
 
 export const menuCategories: MenuCategory[] = [
   {
     id: "classic-coffee",
     nameZh: "經典咖啡",
     nameEn: "Classic Coffee",
-    description: "以品牌指南示意稿中已出現的基本咖啡品項整理。",
+    description:
+      "Simple, balanced coffee favorites for everyday starts and easy afternoon breaks.",
     items: [
       {
         nameZh: "美式咖啡",
@@ -47,9 +48,10 @@ export const menuCategories: MenuCategory[] = [
   },
   {
     id: "signature-coffee",
-    nameZh: "風味咖啡",
+    nameZh: "招牌咖啡",
     nameEn: "Signature Coffee",
-    description: "目前素材中可辨識的風味款，正式口味說明仍待確認。",
+    description:
+      "Comforting house favorites with a slightly sweeter, more playful Dream Corner character.",
     items: [
       {
         nameZh: "摩卡",
@@ -60,6 +62,34 @@ export const menuCategories: MenuCategory[] = [
         nameZh: "焦糖拿鐵",
         nameEn: "Caramel Latte",
         price: 130,
+      },
+    ],
+  },
+  {
+    id: "kombucha",
+    nameZh: "康普茶",
+    nameEn: "Kombucha",
+    description:
+      "Lightly sparkling fermented tea with bright fruit notes and a refreshing finish.",
+    items: [
+      {
+        nameZh: "原味康普茶",
+        nameEn: "Original Kombucha",
+        price: 140,
+        description: "Clean, crisp, and gently tart with a natural tea finish.",
+      },
+      {
+        nameZh: "柚香康普茶",
+        nameEn: "Citrus Kombucha",
+        price: 150,
+        description: "Sunny citrus flavor with lively sparkle and soft acidity.",
+      },
+      {
+        nameZh: "莓果康普茶",
+        nameEn: "Berry Kombucha",
+        price: 150,
+        description:
+          "Fresh berry notes layered over a mellow fermented tea base.",
       },
     ],
   },

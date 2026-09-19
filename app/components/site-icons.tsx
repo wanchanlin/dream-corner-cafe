@@ -162,3 +162,118 @@ export function LeafIcon({ className = "" }: IconProps) {
     </svg>
   );
 }
+
+export function CornerSketchIllustration({ className = "" }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 260 220"
+      fill="none"
+      aria-hidden="true"
+      className={className}
+    >
+      <path
+        d="M22 184c28-10 61-15 100-15 45 0 82 6 116 18"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeDasharray="2 10"
+        opacity="0.55"
+      />
+      <path
+        d="M74 118c0-24 17-41 42-41s42 17 42 41v11c0 25-17 43-42 43s-42-18-42-43v-11Z"
+        stroke="currentColor"
+        strokeWidth="4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M158 103h17c14 0 22 8 22 21s-8 22-22 22h-16"
+        stroke="currentColor"
+        strokeWidth="4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M64 189c14-7 31-11 51-11 22 0 40 4 57 11"
+        stroke="currentColor"
+        strokeWidth="4"
+        strokeLinecap="round"
+      />
+      <path
+        d="M100 56c-8-8-9-18-4-30M126 50c0-12 4-21 12-30M149 57c5-11 13-18 24-22"
+        stroke="currentColor"
+        strokeWidth="3.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M53 66c7-10 18-13 31-10-5 9-13 16-24 20"
+        stroke="currentColor"
+        strokeWidth="3.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M55 68c11 5 18 13 21 24"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeLinecap="round"
+        opacity="0.7"
+      />
+      <path
+        d="M186 72c13-4 25-1 35 9-9 6-20 9-33 8"
+        stroke="currentColor"
+        strokeWidth="3.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M188 73c9 7 14 15 15 26"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeLinecap="round"
+        opacity="0.7"
+      />
+      <path
+        d="M216 35c10 0 18 8 18 18"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeLinecap="round"
+      />
+      <path
+        d="M226 22v8M226 58v8M244 40h-8M216 40h-8"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeLinecap="round"
+      />
+      <path
+        d="M35 133c5-6 12-9 21-9M42 152c7-2 13-2 19 0"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeLinecap="round"
+        opacity="0.7"
+      />
+      <path
+        d="M203 149c5-5 12-8 19-8M205 167c8-1 14 0 19 4"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeLinecap="round"
+        opacity="0.7"
+      />
+      <path
+        d="M86 120c8 4 18 6 29 6 13 0 24-2 33-6"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeLinecap="round"
+        opacity="0.55"
+      />
+      <ellipse
+        cx="116"
+        cy="203"
+        rx="44"
+        ry="8"
+        fill="currentColor"
+        opacity="0.08"
+      />
+    </svg>
+  );
+}
