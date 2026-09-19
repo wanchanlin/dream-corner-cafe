@@ -140,12 +140,10 @@ export default function Home() {
             </div>
 
             <div className="relative z-10">
-              <div className="relative border border-[color:var(--soft-line)] bg-[rgba(255,255,255,0.45)] p-4 sm:p-5">
-                <div className="absolute left-4 top-4 rounded-full border border-[color:var(--soft-line)] bg-cream px-4 py-2 text-[0.68rem] uppercase tracking-[0.28em] text-terracotta">
-                  Brand Guide
-                </div>
+              <div className=" p-4 sm:p-5">
+                
                 <Image
-                  src="/dream-corner-brand-guide.png"
+                  src="/hero.svg"
                   alt="Dream Corner branding guide with logo, color palette, typography, icons, and storefront mockups."
                   width={1125}
                   height={1402}
@@ -153,8 +151,15 @@ export default function Home() {
                   className="h-auto w-full object-cover"
                 />
               </div>
-              <div className="pointer-events-none relative mt-4 ml-auto w-36 rotate-[-7deg] rounded-[1.75rem] border border-[rgba(208,127,96,0.2)] bg-[rgba(249,246,238,0.92)] p-3 text-terracotta shadow-[0_18px_45px_rgba(74,58,47,0.12)] sm:w-40 md:absolute md:-bottom-12 md:-left-4 md:mt-0 md:ml-0 md:w-44 lg:w-52">
-                <CornerSketchIllustration className="h-auto w-full" />
+              {/* <div className="pointer-events-none relative mt-4 ml-auto w-36 rotate-[-7deg]  border border-[rgba(208,127,96,0.2)] bg-[rgba(249,246,238,0.92)] p-3 text-terracotta shadow-[0_18px_45px_rgba(74,58,47,0.12)] sm:w-40 md:absolute md:-bottom-12 md:-left-4 md:mt-0 md:ml-0 md:w-44 lg:w-52">
+                <Image
+                  src="/hero.svg"
+                  alt="Dream Corner branding guide with logo, color palette, typography, icons, and storefront mockups."
+                  width={1125}
+                  height={1402}
+                  priority
+                  className="h-auto w-full object-cover"
+                />
               </div>
               <div className="mt-4 flex items-center justify-between gap-4 border-t border-[color:var(--soft-line)] pt-4">
                 <p className="font-display text-xl text-terracotta sm:text-2xl">
@@ -163,7 +168,7 @@ export default function Home() {
                 <p className="text-[0.7rem] uppercase tracking-[0.3em] text-[rgba(74,58,47,0.62)]">
                   Cream • Sage • Terracotta
                 </p>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>
