@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const navItems = [
   { href: "/#story", label: "品牌故事", english: "Story" },
-  { href: "/menu", label: "飲品菜單", english: "Menu" },
+  { href: "/menu", label: "菜單", english: "Menu" },
   { href: "/#opening", label: "營業資訊", english: "Opening" },
 ];
 
@@ -13,9 +13,9 @@ const footerMenuItems = [
 
 const socialItems = [
   {
-    href: "https://instagram.com",
+    href: "https://www.instagram.com/dreamcornertw/",
     label: "Instagram",
-    detail: "@dreamcorner.cafe",
+    detail: "@dreamcornertw",
   },
   {
     href: "https://facebook.com",
@@ -36,8 +36,8 @@ type SiteHeaderProps = {
 export function SiteHeader({ currentPath = "/" }: SiteHeaderProps) {
   return (
     <header className="sticky top-0 z-40 border-b border-[color:var(--soft-line)] bg-cream/95 backdrop-blur-sm">
-      <div className="mx-auto flex w-full max-w-7xl flex-col gap-4 px-5 py-4 sm:px-8 md:flex-row md:items-center md:justify-between">
-        <Link href="/" className="min-w-0">
+      <div className="mx-auto flex w-full max-w-7xl items-start justify-between gap-4 px-5 py-4 sm:px-8 md:items-center">
+        <Link href="/" className="relative z-[60] min-w-0">
           <span className="font-latin block text-[2.2rem] leading-none text-espresso sm:text-[2.7rem]">
             Dream Corner
           </span>
@@ -48,7 +48,7 @@ export function SiteHeader({ currentPath = "/" }: SiteHeaderProps) {
 
         <nav
           aria-label="Primary"
-          className="flex flex-wrap items-center gap-2 md:justify-end"
+          className="hidden flex-wrap items-center gap-2 md:flex md:justify-end"
         >
           {navItems.map((item) => {
             const isCurrent = currentPath === "/menu" && item.href === "/menu";
@@ -72,6 +72,63 @@ export function SiteHeader({ currentPath = "/" }: SiteHeaderProps) {
             );
           })}
         </nav>
+
+        <details className="group static md:hidden">
+          <summary className="nav-summary relative z-[60] flex min-h-12 min-w-12 cursor-pointer items-center justify-center rounded-full border border-[color:var(--soft-line)] bg-[rgba(255,255,255,0.82)] px-4 text-espresso hover:bg-[rgba(167,179,154,0.12)]">
+            <span className="sr-only">Open menu</span>
+            <span className="flex flex-col gap-[5px]">
+              <span className="block h-[2px] w-5 rounded-full bg-current transition-transform group-open:translate-y-[7px] group-open:rotate-45" />
+              <span className="block h-[2px] w-5 rounded-full bg-current transition-opacity group-open:opacity-0" />
+              <span className="block h-[2px] w-5 rounded-full bg-current transition-transform group-open:-translate-y-[7px] group-open:-rotate-45" />
+            </span>
+          </summary>
+
+          <nav
+            aria-label="Mobile primary"
+            className="fixed inset-0 z-50 flex min-h-screen flex-col bg-[linear-gradient(180deg,rgba(249,246,238,0.98),rgba(239,229,216,0.96))] px-5 pb-10 pt-28"
+          >
+            <div className="absolute left-[-3rem] top-20 h-32 w-32 rounded-full bg-[rgba(167,179,154,0.18)]" />
+            <div className="absolute bottom-14 right-[-2rem] h-40 w-40 rounded-full border border-[rgba(208,127,96,0.16)]" />
+
+            <div className="relative z-10 mx-auto flex h-full w-full max-w-7xl flex-col">
+              <div className="mb-6 text-[0.72rem] uppercase tracking-[0.3em] text-terracotta">
+                Dream Corner Menu
+              </div>
+
+              <div className="flex flex-1 flex-col justify-center gap-3">
+                {navItems.map((item) => {
+                  const isCurrent =
+                    currentPath === "/menu" && item.href === "/menu";
+
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      aria-current={isCurrent ? "page" : undefined}
+                      className={`rounded-[1.75rem] border px-6 py-5 text-2xl leading-tight transition-colors ${
+                        isCurrent
+                          ? "border-[rgba(208,127,96,0.24)] bg-[rgba(208,127,96,0.12)] text-terracotta"
+                          : "border-[color:var(--soft-line)] bg-[rgba(255,255,255,0.44)] text-espresso hover:bg-[rgba(167,179,154,0.14)] hover:text-terracotta"
+                      }`}
+                    >
+                      <span className="font-display block">{item.label}</span>
+                      <span className="mt-2 block text-[0.72rem] uppercase tracking-[0.28em] text-terracotta">
+                        {item.english}
+                      </span>
+                    </Link>
+                  );
+                })}
+              </div>
+
+              <div className="relative z-10 mt-8 flex items-center justify-between gap-4 border-t border-[color:var(--soft-line)] pt-6 text-sm text-[rgba(74,58,47,0.72)]">
+                <p>Good coffee, easy brunch, brighter days.</p>
+                <p className="section-kicker text-[0.68rem] text-terracotta">
+                  Qingpu
+                </p>
+              </div>
+            </div>
+          </nav>
+        </details>
       </div>
     </header>
   );
@@ -100,7 +157,7 @@ export function SiteFooter() {
               href="/menu"
               className="inline-flex min-h-12 items-center justify-center rounded-full border border-[color:var(--soft-line)] px-5 py-3 text-sm tracking-[0.14em] uppercase text-espresso hover:bg-[rgba(167,179,154,0.12)]"
             >
-              飲品菜單 Menu
+              菜單 Menu
             </Link>
           </div>
         </div>

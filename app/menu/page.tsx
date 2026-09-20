@@ -38,10 +38,7 @@ export default function MenuPage() {
           <div className="mx-auto grid w-full max-w-7xl gap-10 px-5 py-16 sm:px-8 md:py-20 lg:grid-cols-[minmax(0,1.1fr)_minmax(320px,0.9fr)] lg:items-start">
             <div className="relative z-10">
               <div className="flex flex-wrap items-center gap-4">
-                <p className="section-kicker text-xs text-terracotta">
-                  Our Menu
-                </p>
-                <WaveLine className="hidden sm:block" />
+               
               </div>
               <h1 className="font-display mt-6 text-[clamp(2.8rem,7vw,5.2rem)] leading-[1.05] text-espresso">
                 飲品菜單

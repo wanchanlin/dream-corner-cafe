@@ -19,25 +19,25 @@ const storyHighlights = [
     title: "好咖啡",
     english: "Good Coffee",
     description: "以日常也想一再回來的那杯咖啡，陪伴每個普通卻值得的時刻。",
-    icon: CupIcon,
+    image: "/coffee.svg",
   },
   {
-    title: "美味早午餐",
-    english: "Tasty Brunch",
-    description: "讓早午餐成為放慢節奏的理由，留下剛剛好的飽足與好心情。",
-    icon: CroissantIcon,
+    title: "美味甜點",
+    english: "Tasty Desserts",
+    description: "讓甜點放慢節奏的理由，留下剛剛好的飽足與好心情。",
+    image: "/cake.svg",
   },
   {
     title: "更明亮的每一天",
     english: "Brighter Days",
     description: "把熱帶暖意與街角人情帶進生活裡，讓停留變成一種充電。",
-    icon: SunIcon,
+    image: "/sun.svg",
   },
   {
     title: "小小角落",
     english: "A Small Corner",
     description: "不追求喧鬧，只想在青埔留一個舒適、自然、容易靠近的位置。",
-    icon: ChairIcon,
+    image: "/plant.svg",
   },
 ];
 
@@ -88,7 +88,6 @@ export default function Home() {
                 <span className="section-kicker text-xs text-terracotta">
                   Coffee • People • A Brighter Tomorrow
                 </span>
-                <WaveLine className="hidden sm:block" />
               </div>
 
               <div className="space-y-5">
@@ -98,7 +97,13 @@ export default function Home() {
                   Corner
                 </p>
                 <div className="flex items-center gap-4">
-                  <PalmMark className="h-14 w-14 text-sage" />
+                  <Image
+                    src="/grinder.svg"
+                    alt="Dream Corner branding guide with logo, color palette, typography, icons, and storefront mockups."
+                    width={48}
+                    height={48}
+                    priority
+                  />
                   <p className="max-w-md text-base leading-8 text-[rgba(74,58,47,0.82)] sm:text-lg">
                     在青埔留下一個溫暖的小角落，用好咖啡、舒服早午餐，陪你把平凡的一天慢慢變亮。
                   </p>
@@ -123,7 +128,7 @@ export default function Home() {
                 </a>
               </div>
 
-              <div className="grid gap-4 text-sm sm:grid-cols-3">
+              {/* <div className="grid gap-4 text-sm sm:grid-cols-3">
                 <InfoPill
                   label="Coffee"
                   text="用咖啡和溫度，照顧每一個想暫停一下的片刻。"
@@ -136,7 +141,7 @@ export default function Home() {
                   label="Natural"
                   text="奶油、鼠尾草與陶土色，延續品牌裡的自然島嶼感。"
                 />
-              </div>
+              </div> */}
             </div>
 
             <div className="relative z-10">
@@ -194,14 +199,20 @@ export default function Home() {
 
           <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {storyHighlights.map((item) => {
-              const Icon = item.icon;
+            
 
               return (
                 <article
                   key={item.english}
                   className="soft-card flex h-full flex-col gap-5 bg-[rgba(255,255,255,0.56)] p-6"
                 >
-                  <Icon className="h-12 w-12 text-terracotta" />
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    width={48}
+                    height={48}
+                    className="h-12 w-12 text-terracotta"
+                  />
                   <div className="space-y-3">
                     <h3 className="font-display text-2xl leading-snug text-espresso">
                       {item.title}
@@ -304,7 +315,10 @@ export default function Home() {
                       目前示意價格取自品牌指南中的 menu example。若之後有正式品項、冰熱選項或客製資訊，只要更新資料檔，就能同步反映到菜單頁。
                     </p>
                   </div>
-                  <LeafIcon className="h-12 w-12 shrink-0 text-sage" />
+                  <Image  
+                  width={50}
+                  height={50} 
+                  src="/ice-drink.svg" alt="Editable data illustration" />
                 </div>
               </article>
             </div>

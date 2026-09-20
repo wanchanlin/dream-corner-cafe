@@ -128,6 +128,14 @@ button:focus-visible {
   left: -3rem;
 }
 
+.nav-summary {
+  list-style: none;
+}
+
+.nav-summary::-webkit-details-marker {
+  display: none;
+}
+
 @media (max-width: 767px) {
   html {
     scroll-padding-top: 5rem;
