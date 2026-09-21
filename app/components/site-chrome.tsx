@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const navItems = [
-  { href: "/#story", label: "品牌故事", english: "Story" },
+  { href: "/story", label: "品牌故事", english: "Story" },
   { href: "/menu", label: "菜單", english: "Menu" },
   { href: "/#opening", label: "營業資訊", english: "Opening" },
 ];
@@ -30,7 +30,7 @@ const socialItems = [
 ];
 
 type SiteHeaderProps = {
-  currentPath?: "/" | "/menu";
+  currentPath?: "/" | "/menu" | "/story";
 };
 
 export function SiteHeader({ currentPath = "/" }: SiteHeaderProps) {
@@ -51,7 +51,9 @@ export function SiteHeader({ currentPath = "/" }: SiteHeaderProps) {
           className="hidden flex-wrap items-center gap-2 md:flex md:justify-end"
         >
           {navItems.map((item) => {
-            const isCurrent = currentPath === "/menu" && item.href === "/menu";
+            const isCurrent =
+              (currentPath === "/menu" && item.href === "/menu") ||
+              (currentPath === "/story" && item.href === "/story");
 
             return (
               <Link
@@ -98,7 +100,8 @@ export function SiteHeader({ currentPath = "/" }: SiteHeaderProps) {
               <div className="flex flex-1 flex-col justify-center gap-3">
                 {navItems.map((item) => {
                   const isCurrent =
-                    currentPath === "/menu" && item.href === "/menu";
+                    (currentPath === "/menu" && item.href === "/menu") ||
+                    (currentPath === "/story" && item.href === "/story");
 
                   return (
                     <Link
