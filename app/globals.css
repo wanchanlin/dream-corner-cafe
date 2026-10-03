@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --cream: #f9f6ee;
-  --sage: #a7b39a;
-  --terracotta: #d07f60;
-  --latte: #cbb59b;
+  --cream: #FAF1D9;
+  --sage: #FAF1D9;
+  --darkgreen: #273421;
+  --latte: #FAF1D9;
   --espresso: #4a3a2f;
-  --mist: #efe5d8;
+  --mist: #FAF1D9;
   --leaf-line: #75886d;
   --soft-line: rgba(74, 58, 47, 0.16);
   --background: var(--cream);
@@ -26,7 +26,7 @@
   --color-foreground: var(--foreground);
   --color-cream: var(--cream);
   --color-sage: var(--sage);
-  --color-terracotta: var(--terracotta);
+  --color-darkgreen: var(--darkgreen);
   --color-latte: var(--latte);
   --color-espresso: var(--espresso);
   --color-mist: var(--mist);
@@ -56,7 +56,7 @@ button {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--terracotta);
+  outline: 2px solid var(--darkgreen);
   outline-offset: 3px;
 }
 
@@ -73,9 +73,9 @@ button:focus-visible {
 }
 
 .outline-button {
-  border: 1.5px solid var(--terracotta);
+  border: 1.5px solid var(--darkgreen);
   border-radius: 9999px;
-  color: var(--terracotta);
+  color: var(--darkgreen);
 }
 
 .section-kicker {
@@ -114,19 +114,6 @@ button:focus-visible {
   pointer-events: none;
 }
 
-.leaf-frame::before {
-  width: 14rem;
-  height: 14rem;
-  top: -6rem;
-  right: -4rem;
-}
-
-.leaf-frame::after {
-  width: 10rem;
-  height: 10rem;
-  bottom: -4rem;
-  left: -3rem;
-}
 
 .nav-summary {
   list-style: none;

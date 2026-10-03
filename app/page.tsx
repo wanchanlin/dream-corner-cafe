@@ -80,23 +80,18 @@ export default function Home() {
           id="top"
           className="leaf-frame relative overflow-hidden border-b border-[color:var(--soft-line)]"
         >
-          <div className="absolute left-0 top-20 hidden h-56 w-56 rounded-full bg-[rgba(167,179,154,0.14)] lg:block" />
-          <div className="absolute bottom-10 right-10 hidden h-28 w-28 rounded-full border border-[rgba(208,127,96,0.26)] lg:block" />
+         
 
           <div className="mx-auto grid min-h-[calc(100vh-76px)] w-full max-w-7xl gap-12 px-5 py-12 sm:px-8 md:py-16 lg:grid-cols-[minmax(0,1.05fr)_minmax(420px,0.95fr)] lg:items-center lg:gap-16">
             <div className="relative z-10 flex flex-col gap-8">
               <div className="flex flex-wrap items-center gap-4">
-                <span className="section-kicker text-xs text-terracotta">
+                <span className="section-kicker text-xs text-darkgreen">
                   Coffee • People • A Brighter Tomorrow
                 </span>
               </div>
 
               <div className="space-y-5">
-                <p className="font-latin text-[clamp(3.2rem,8vw,6.4rem)] leading-[0.88] text-espresso">
-                  Dream
-                  <br />
-                  Corner
-                </p>
+              
                 <div className="flex items-center gap-4">
                   <Image
                     src="/grinder.svg"
@@ -109,7 +104,7 @@ export default function Home() {
                     在青埔留下一個溫暖的小角落，用好咖啡、舒服早午餐，陪你把平凡的一天慢慢變亮。
                   </p>
                 </div>
-                <p className="max-w-lg text-sm uppercase tracking-[0.28em] text-terracotta sm:text-[0.82rem]">
+                <p className="max-w-lg text-sm uppercase tracking-[0.28em] text-darkgreen sm:text-[0.82rem]">
                   A small corner for good coffee, easy brunch, and brighter days.
                 </p>
               </div>
@@ -246,7 +241,7 @@ export default function Home() {
               <p className="mt-6 max-w-xl text-base leading-8 text-[rgba(74,58,47,0.82)] sm:text-lg">
                 我把 Dream Corner 的飲品菜單整理成獨立頁面，延續品牌指南中的奶油、鼠尾草與陶土色，閱讀節奏更像一張真正可以上線的咖啡菜單。
               </p>
-              <div
+              {/* <div
                 role="note"
                 className="soft-card mt-6 bg-[rgba(255,255,255,0.5)] px-5 py-4 text-sm leading-7 text-[rgba(74,58,47,0.82)]"
               >
@@ -254,7 +249,7 @@ export default function Home() {
                   Preview Note
                 </p>
                 <p className="mt-2">{menuPreviewNotice}</p>
-              </div>
+              </div> */}
               <Link
                 href="/menu"
                 className="outline-button mt-6 inline-flex min-h-13 items-center justify-center px-7 py-3 text-sm tracking-[0.18em] uppercase hover:bg-[rgba(208,127,96,0.08)]"

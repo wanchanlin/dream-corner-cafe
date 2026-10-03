@@ -12,11 +12,11 @@ export function InstagramSection() {
     >
       <div className="mb-8 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
         <div className="max-w-2xl">
-          <p className="section-kicker text-xs text-terracotta">Instagram</p>
+          <p className="section-kicker text-xs text-darkgreen">Instagram</p>
           <h2 className="font-display mt-4 text-4xl leading-tight text-espresso sm:text-5xl">
             跟著 Dream Corner 的日常
           </h2>
-          <p className="mt-2 text-[0.72rem] uppercase tracking-[0.22em] text-terracotta">
+          <p className="mt-2 text-[0.72rem] uppercase tracking-[0.22em] text-darkgreen">
             Follow Our Journey
           </p>
         </div>
@@ -61,7 +61,7 @@ export function InstagramSection() {
                 href={post.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block p-5 text-center text-sm text-terracotta"
+                className="block p-5 text-center text-sm text-darkgreen"
               >
                 View this post on Instagram
               </a>
