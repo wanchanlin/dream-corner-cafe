@@ -3,6 +3,7 @@ import Link from "next/link";
 const navItems = [
   { href: "/story", label: "品牌故事", english: "Story" },
   { href: "/menu", label: "菜單", english: "Menu" },
+  { href: "/beans", label: "咖啡豆", english: "Beans" },
   { href: "/#opening", label: "營業資訊", english: "Opening" },
 ];
 
@@ -30,7 +31,7 @@ const socialItems = [
 ];
 
 type SiteHeaderProps = {
-  currentPath?: "/" | "/menu" | "/story";
+  currentPath?: "/" | "/menu" | "/story" | "/beans";
 };
 
 export function SiteHeader({ currentPath = "/" }: SiteHeaderProps) {
@@ -53,7 +54,8 @@ export function SiteHeader({ currentPath = "/" }: SiteHeaderProps) {
           {navItems.map((item) => {
             const isCurrent =
               (currentPath === "/menu" && item.href === "/menu") ||
-              (currentPath === "/story" && item.href === "/story");
+              (currentPath === "/story" && item.href === "/story") ||
+              (currentPath === "/beans" && item.href === "/beans");
 
             return (
               <Link
@@ -101,7 +103,8 @@ export function SiteHeader({ currentPath = "/" }: SiteHeaderProps) {
                 {navItems.map((item) => {
                   const isCurrent =
                     (currentPath === "/menu" && item.href === "/menu") ||
-                    (currentPath === "/story" && item.href === "/story");
+                    (currentPath === "/story" && item.href === "/story") ||
+                    (currentPath === "/beans" && item.href === "/beans");
 
                   return (
                     <Link

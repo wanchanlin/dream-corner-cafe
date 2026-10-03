@@ -346,7 +346,7 @@ export default function Home() {
               {openingCards.map((card) => (
                 <article
                   key={card.english}
-                  className="soft-card flex min-h-48 flex-col justify-between bg-[rgba(255,255,255,0.56)] p-6"
+                  className="flex min-h-48 flex-col justify-between  p-6"
                 >
                   <div>
                     <p className="section-kicker text-[0.72rem] text-terracotta">
