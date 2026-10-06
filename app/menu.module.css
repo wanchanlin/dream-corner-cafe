@@ -48,22 +48,36 @@
   border-radius: 999px;
 }
 
-.categoryNav a {
+.categoryNav button {
   display: flex;
   min-height: 3rem;
   align-items: center;
   justify-content: center;
   gap: 0.35rem;
   padding: 0.65rem 0.8rem;
+  border: 0;
   border-radius: 999px;
+  background: transparent;
   color: #273421;
+  cursor: pointer;
+  font: inherit;
   font-size: clamp(0.72rem, 1.6vw, 0.9rem);
   line-height: 1;
   text-align: center;
+  transition:
+    color 180ms ease,
+    background-color 180ms ease;
 }
 
-.categoryNav a:hover {
+.categoryNav button:hover {
   background: rgba(39, 52, 33, 0.08);
+}
+
+.categoryNav button:focus-visible {
+  position: relative;
+  z-index: 1;
+  outline: 2px solid #2f684f;
+  outline-offset: -3px;
 }
 
 .categoryNav .activeCategory {
@@ -76,6 +90,15 @@
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: clamp(2rem, 5vw, 4.25rem) clamp(0.4rem, 2.5vw, 2rem);
   margin-top: clamp(2.4rem, 6vw, 4.5rem);
+}
+
+.tabPanel {
+  min-height: 29rem;
+  animation: reveal-panel 240ms ease-out;
+}
+
+.dessertPanel {
+  padding-top: clamp(3.5rem, 8vw, 6rem);
 }
 
 .menuItem {
@@ -151,15 +174,11 @@
   font-variant-numeric: tabular-nums;
 }
 
-.dessertSection {
-  margin-top: clamp(4.5rem, 10vw, 7.5rem);
-}
-
-.dessertSection header {
+.dessertHeading {
   max-width: 42rem;
 }
 
-.dessertSection h2 {
+.dessertHeading h2 {
   margin: 0;
   font-size: clamp(1.9rem, 4.5vw, 3.5rem);
   font-weight: 500;
@@ -168,7 +187,7 @@
   text-wrap: balance;
 }
 
-.dessertSection header > p:last-child {
+.dessertHeading > p:last-child {
   margin-top: 0.75rem;
   font-size: clamp(0.9rem, 1.8vw, 1.1rem);
   line-height: 1.7;
@@ -201,12 +220,12 @@
     padding-inline: 1rem;
   }
 
-  .categoryNav a {
+  .categoryNav button {
     min-height: 2.8rem;
     padding-inline: 0.35rem;
   }
 
-  .categoryNav a span {
+  .categoryNav button span {
     display: none;
   }
 
@@ -225,6 +244,24 @@
   .english,
   .price {
     font-size: 0.58rem;
+  }
+}
+
+@keyframes reveal-panel {
+  from {
+    opacity: 0;
+    transform: translateY(0.4rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tabPanel {
+    animation: none;
   }
 }
 
