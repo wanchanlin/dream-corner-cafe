@@ -1,19 +1,5 @@
 import type { Metadata } from "next";
-import {
-  Noto_Sans_TC,
-  Noto_Serif_TC,
-} from "next/font/google";
 import "./globals.css";
-
-
-
-const notoSansTc = Noto_Sans_TC({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-noto-sans-tc",
-});
-
-
 
 export const metadata: Metadata = {
   title: "Dream Corner | 青埔的溫暖咖啡角落",
