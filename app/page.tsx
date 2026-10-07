@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { InstagramSection } from "@/app/components/instagram-section";
-import { SiteFooter, SiteHeader } from "@/app/components/site-chrome";
+import { SiteFooter, SiteHeader } from "@/app/components/nav";
 import {
   ChairIcon,
   CornerSketchIllustration,

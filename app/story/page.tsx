@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-import { SiteFooter, SiteHeader } from "@/app/components/site-chrome";
+import { SiteFooter, SiteHeader } from "@/app/components/nav";
 import { LeafIcon, PalmMark, SunIcon, WaveLine } from "@/app/components/site-icons";
 
 export const metadata: Metadata = {
@@ -67,8 +67,6 @@ export default function StoryPage() {
           id="top"
           className="leaf-frame relative overflow-hidden border-b border-[color:var(--soft-line)]"
         >
-          <div className="absolute left-0 top-16 hidden h-48 w-48 rounded-full bg-[rgba(167,179,154,0.14)] lg:block" />
-          <div className="absolute bottom-10 right-10 hidden h-28 w-28 rounded-full border border-[rgba(208,127,96,0.26)] lg:block" />
 
           <div className="mx-auto grid w-full max-w-7xl gap-10 px-5 py-16 sm:px-8 md:py-20 lg:grid-cols-[minmax(0,1.08fr)_minmax(320px,0.92fr)] lg:items-center">
             <div className="relative z-10">
@@ -101,7 +99,7 @@ export default function StoryPage() {
             </div>
 
             <div className="relative z-10">
-              <div className="soft-card bg-[rgba(255,255,255,0.54)] p-6 sm:p-8">
+              {/* <div className="soft-card bg-[rgba(255,255,255,0.54)] p-6 sm:p-8">
                 <div className="flex items-center justify-between border-b border-[color:var(--soft-line)] pb-5">
                   <div>
                     <p className="section-kicker text-[0.7rem] text-terracotta">
@@ -135,7 +133,12 @@ export default function StoryPage() {
                     </div>
                   ))}
                 </div>
-              </div>
+              </div> */}
+              <img
+                src="/story.webp"
+                alt="Dream Corner"
+                className="mx-auto h-auto w-full max-w-3xl rounded-2xl"
+              />
             </div>
           </div>
         </section>

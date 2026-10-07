@@ -39,12 +39,16 @@ export function SiteHeader({ currentPath = "/" }: SiteHeaderProps) {
     <header className="sticky top-0 z-40 border-b border-[color:var(--soft-line)] bg-cream/95 backdrop-blur-sm">
       <div className="mx-auto flex w-full max-w-7xl items-start justify-between gap-4 px-5 py-4 sm:px-8 md:items-center">
         <Link href="/" className="relative z-[60] min-w-0">
-          <span className="font-latin block text-[2.2rem] leading-none text-espresso sm:text-[2.7rem]">
+          {/* <span className="font-latin block text-[2.2rem] leading-none text-espresso sm:text-[2.7rem]">
             Dream Corner
-          </span>
-          <span className="mt-2 block text-[0.68rem] uppercase tracking-[0.32em] text-terracotta">
-            Qingpu, Taiwan
-          </span>
+          </span> */}
+          <img
+            src="/logo.svg"
+            alt="Dream Corner"
+      
+        
+            className="h-10 w-auto"
+          />       
         </Link>
 
         <nav

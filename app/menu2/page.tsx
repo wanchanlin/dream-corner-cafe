@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { SiteFooter, SiteHeader } from "@/app/components/site-chrome";
+import { SiteFooter, SiteHeader } from "@/app/components/nav";
 import { LeafIcon, WaveLine } from "@/app/components/site-icons";
 import {
   menuCategories,

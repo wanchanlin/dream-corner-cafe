@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-import { SiteFooter, SiteHeader } from "@/app/components/site-chrome";
+import { BeanSelection } from "@/app/components/bean-selection";
+import { SiteFooter, SiteHeader } from "@/app/components/nav";
 import { LeafIcon, WaveLine } from "@/app/components/site-icons";
 
 export const metadata: Metadata = {
@@ -10,49 +11,6 @@ export const metadata: Metadata = {
   description:
     "選擇適合手沖、義式與日常黑咖啡的 Dream Corner 新鮮烘焙咖啡豆，了解風味、烘焙度與訂購方式。",
 };
-
-const beans = [
-  {
-    id: "morning-light",
-    nameZh: "晨光配方",
-    nameEn: "Morning Light",
-    origin: "衣索比亞 × 哥倫比亞",
-    process: "水洗 / 日曬",
-    roast: "淺中焙",
-    roastLevel: 2,
-    notes: ["柑橘", "焦糖", "花香"],
-    brew: "手沖 · 美式",
-    price: 450,
-    color: "#d07f60",
-  },
-  {
-    id: "corner-house",
-    nameZh: "街角配方",
-    nameEn: "Corner House",
-    origin: "巴西 × 哥倫比亞",
-    process: "日曬 / 水洗",
-    roast: "中焙",
-    roastLevel: 3,
-    notes: ["堅果", "牛奶巧克力", "黑糖"],
-    brew: "義式 · 拿鐵 · 摩卡壺",
-    price: 420,
-    color: "#75886d",
-    featured: true,
-  },
-  {
-    id: "night-island",
-    nameZh: "島嶼深夜",
-    nameEn: "Island After Dark",
-    origin: "巴西 × 印尼",
-    process: "日曬 / 濕剝",
-    roast: "中深焙",
-    roastLevel: 4,
-    notes: ["黑巧克力", "烤堅果", "香料"],
-    brew: "義式 · 法壓 · 冰滴",
-    price: 430,
-    color: "#4a3a2f",
-  },
-];
 
 const roastGuide = [
   {
@@ -186,90 +144,7 @@ export default function BeansPage() {
             </h2>
           </div>
 
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            {beans.map((bean) => (
-              <article
-                key={bean.id}
-                className={`soft-card relative flex h-full flex-col overflow-hidden p-6 sm:p-7 ${
-                  bean.featured
-                    ? "bg-[rgba(167,179,154,0.18)]"
-                    : "bg-[rgba(255,255,255,0.5)]"
-                }`}
-              >
-                {bean.featured ? (
-                  <p className="absolute right-5 top-5 rounded-full bg-darkgreen px-3 py-1 text-[0.62rem] uppercase tracking-[0.18em] text-cream">
-                    House Pick
-                  </p>
-                ) : null}
-
-                <div className="flex items-start gap-4 pr-20">
-                  <span
-                    className="mt-1 h-4 w-4 shrink-0 rounded-full border border-espresso/20"
-                    style={{ backgroundColor: bean.color }}
-                    aria-hidden="true"
-                  />
-                  <div>
-                    <h3 className="font-display text-3xl leading-tight text-espresso">
-                      {bean.nameZh}
-                    </h3>
-                    <p className="mt-2 text-[0.7rem] uppercase tracking-[0.24em] text-terracotta">
-                      {bean.nameEn}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="my-7 flex items-center gap-4 border-y border-[color:var(--soft-line)] py-5">
-                  <Image
-                    src="/coffee-bean.svg"
-                    alt=""
-                    width={48}
-                    height={50}
-                    className="h-11 w-11 opacity-80"
-                  />
-                  <ul className="flex flex-wrap gap-2" aria-label={`${bean.nameZh} 風味`}>
-                    {bean.notes.map((note) => (
-                      <li
-                        key={note}
-                        className="rounded-full border border-[color:var(--soft-line)] bg-cream/70 px-3 py-1.5 text-xs"
-                      >
-                        {note}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <dl className="space-y-3 text-sm leading-6 text-[rgba(74,58,47,0.78)]">
-                  <BeanFact label="產地 Origin" value={bean.origin} dark={false} />
-                  <BeanFact label="處理 Process" value={bean.process} dark={false} />
-                  <BeanFact label="烘焙 Roast" value={bean.roast} dark={false} />
-                  <BeanFact label="沖煮 Brew" value={bean.brew} dark={false} />
-                </dl>
-
-                <div className="mt-auto pt-7">
-                  <RoastMeter level={bean.roastLevel} />
-                  <div className="mt-6 flex items-center justify-between gap-4">
-                    <p>
-                      <span className="block text-xs uppercase tracking-[0.18em] text-[rgba(74,58,47,0.55)]">
-                        250 g
-                      </span>
-                      <span className="font-display mt-1 block text-2xl">
-                        NT$ {bean.price}
-                      </span>
-                    </p>
-                    <a
-                      href={`https://www.instagram.com/dreamcornertw/?bean=${bean.id}`}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="outline-button inline-flex min-h-11 items-center justify-center px-5 py-2 text-xs uppercase tracking-[0.16em] hover:bg-[rgba(208,127,96,0.08)]"
-                      aria-label={`詢問 ${bean.nameZh}`}
-                    >
-                      詢問訂購
-                    </a>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
+          <BeanSelection />
         </section>
 
         <section
@@ -383,28 +258,6 @@ function BeanFact({
         {label}
       </dt>
       <dd className="text-right">{value}</dd>
-    </div>
-  );
-}
-
-function RoastMeter({ level }: { level: number }) {
-  return (
-    <div>
-      <div className="mb-2 flex justify-between text-[0.62rem] uppercase tracking-[0.18em] text-[rgba(74,58,47,0.5)]">
-        <span>Light</span>
-        <span>Roast</span>
-        <span>Dark</span>
-      </div>
-      <div className="grid grid-cols-5 gap-1.5" aria-label={`烘焙度 ${level} / 5`}>
-        {[1, 2, 3, 4, 5].map((item) => (
-          <span
-            key={item}
-            className={`h-2 rounded-full ${
-              item <= level ? "bg-terracotta" : "bg-[rgba(74,58,47,0.12)]"
-            }`}
-          />
-        ))}
-      </div>
     </div>
   );
 }
