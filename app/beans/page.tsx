@@ -44,8 +44,6 @@ export default function BeansPage() {
 
       <main id="content" className="flex-1">
         <section className="relative overflow-hidden border-b border-[color:var(--soft-line)]">
-          <div className="absolute -right-28 top-14 h-80 w-80 rounded-full bg-[rgba(167,179,154,0.18)]" />
-          <div className="absolute -left-16 bottom-0 h-40 w-40 rounded-full border border-[rgba(208,127,96,0.22)]" />
 
           <div className="relative mx-auto grid w-full max-w-7xl gap-12 px-5 py-16 sm:px-8 md:py-20 lg:grid-cols-[minmax(0,1fr)_minmax(340px,0.78fr)] lg:items-center">
             <div>
@@ -53,7 +51,7 @@ export default function BeansPage() {
                 Roasted Coffee Beans
               </p>
               <h1 className="font-display mt-6 max-w-3xl text-[clamp(3.2rem,7vw,6.2rem)] leading-[0.98] text-espresso [text-wrap:balance]">
-                把剛烘好的香氣，
+                剛烘好的香氣，
                 <br />
                 帶回你的日常。
               </h1>
@@ -78,7 +76,8 @@ export default function BeansPage() {
             </div>
 
             <div className="relative mx-auto w-full max-w-md">
-              <div className="soft-card relative overflow-hidden bg-darkgreen p-7 text-cream shadow-[0_24px_70px_rgba(74,58,47,0.18)] sm:p-9">
+              <Image src="/coffee-beans.webp" alt="Dream Corner" width={640} height={640} className="rounded-2xl" priority />
+              {/* <div className="soft-card relative overflow-hidden bg-darkgreen p-7 text-cream shadow-[0_24px_70px_rgba(74,58,47,0.18)] sm:p-9">
                 <div className="flex items-start justify-between gap-5 border-b border-white/20 pb-6">
                   <div>
                     <p className="section-kicker text-[0.68rem] text-[rgba(249,246,238,0.65)]">
@@ -119,7 +118,7 @@ export default function BeansPage() {
               </div>
               <p className="mt-4 text-center text-xs leading-6 text-[rgba(74,58,47,0.6)]">
                 豆單與價格依當期批次調整，訂購前請確認最新供應。
-              </p>
+              </p> */}
             </div>
           </div>
         </section>
@@ -128,7 +127,7 @@ export default function BeansPage() {
           id="selection"
           className="mx-auto w-full max-w-7xl px-5 py-20 sm:px-8 md:py-24"
         >
-          <div className="grid gap-8 border-b border-[color:var(--soft-line)] pb-10 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
+          <div className="grid gap-8  pb-10 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
             <div>
               <p className="section-kicker text-xs text-terracotta">
                 Current Selection
