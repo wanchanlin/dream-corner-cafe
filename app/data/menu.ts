@@ -12,6 +12,7 @@ export type MenuCategory = {
   nameZh: string;
   nameEn: string;
   description: string;
+  descriptionZh: string;
   items: MenuItem[];
 };
 
@@ -28,6 +29,7 @@ export const menuCategories: MenuCategory[] = [
     nameEn: "Classic Coffee",
     description:
       "Simple, balanced coffee favorites for everyday starts and easy afternoon breaks.",
+    descriptionZh: "簡單、平衡的咖啡選擇，陪你展開日常，也適合午後輕鬆休息。",
     items: [
       {
         nameZh: "美式咖啡",
@@ -52,6 +54,7 @@ export const menuCategories: MenuCategory[] = [
     nameEn: "Signature Coffee",
     description:
       "Comforting house favorites with a slightly sweeter, more playful Dream Corner character.",
+    descriptionZh: "甜感更柔和、風味更有趣的店內招牌，呈現 Dream Corner 獨有的自在個性。",
     items: [
       {
         nameZh: "摩卡",
@@ -71,6 +74,7 @@ export const menuCategories: MenuCategory[] = [
     nameEn: "Kombucha",
     description:
       "Lightly sparkling fermented tea with bright fruit notes and a refreshing finish.",
+    descriptionZh: "帶有細緻氣泡的發酵茶，果香明亮，尾韻清爽。",
     items: [
       {
         nameZh: "原味康普茶",

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { useSiteLanguage } from "@/app/components/language";
 
 type RoastFilter = "all" | "light-medium" | "medium" | "medium-dark";
 
@@ -10,12 +11,16 @@ type Bean = {
   nameZh: string;
   nameEn: string;
   origin: string;
+  originEn: string;
   process: string;
+  processEn: string;
   roast: string;
   roastLevel: number;
   roastFilter: Exclude<RoastFilter, "all">;
   notes: string[];
+  notesEn: string[];
   brew: string;
+  brewEn: string;
   price: number;
   color: string;
   featured?: boolean;
@@ -38,12 +43,16 @@ const beans: Bean[] = [
     nameZh: "晨光配方",
     nameEn: "Morning Light",
     origin: "衣索比亞 × 哥倫比亞",
+    originEn: "Ethiopia × Colombia",
     process: "水洗 / 日曬",
+    processEn: "Washed / Natural",
     roast: "淺中焙",
     roastLevel: 2,
     roastFilter: "light-medium",
     notes: ["柑橘", "焦糖", "花香"],
+    notesEn: ["Citrus", "Caramel", "Floral"],
     brew: "手沖 · 美式",
+    brewEn: "Pour-over · Americano",
     price: 450,
     color: "#d07f60",
   },
@@ -52,12 +61,16 @@ const beans: Bean[] = [
     nameZh: "街角配方",
     nameEn: "Corner House",
     origin: "巴西 × 哥倫比亞",
+    originEn: "Brazil × Colombia",
     process: "日曬 / 水洗",
+    processEn: "Natural / Washed",
     roast: "中焙",
     roastLevel: 3,
     roastFilter: "medium",
     notes: ["堅果", "牛奶巧克力", "黑糖"],
+    notesEn: ["Nutty", "Milk chocolate", "Brown sugar"],
     brew: "義式 · 拿鐵 · 摩卡壺",
+    brewEn: "Espresso · Latte · Moka pot",
     price: 420,
     color: "#75886d",
     featured: true,
@@ -67,18 +80,24 @@ const beans: Bean[] = [
     nameZh: "島嶼深夜",
     nameEn: "Island After Dark",
     origin: "巴西 × 印尼",
+    originEn: "Brazil × Indonesia",
     process: "日曬 / 濕剝",
+    processEn: "Natural / Wet-hulled",
     roast: "中深焙",
     roastLevel: 4,
     roastFilter: "medium-dark",
     notes: ["黑巧克力", "烤堅果", "香料"],
+    notesEn: ["Dark chocolate", "Toasted nuts", "Spice"],
     brew: "義式 · 法壓 · 冰滴",
+    brewEn: "Espresso · French press · Cold drip",
     price: 430,
     color: "#4a3a2f",
   },
 ];
 
 export function BeanSelection() {
+  const language = useSiteLanguage();
+  const isEnglish = language === "en";
   const [activeFilter, setActiveFilter] = useState<RoastFilter>("all");
   const [searchQuery, setSearchQuery] = useState("");
   const normalizedQuery = searchQuery.trim().toLocaleLowerCase("zh-Hant");
@@ -90,10 +109,14 @@ export function BeanSelection() {
       bean.nameZh,
       bean.nameEn,
       bean.origin,
+      bean.originEn,
       bean.process,
+      bean.processEn,
       bean.roast,
       bean.brew,
+      bean.brewEn,
       ...bean.notes,
+      ...bean.notesEn,
     ]
       .join(" ")
       .toLocaleLowerCase("zh-Hant");
@@ -116,10 +139,7 @@ export function BeanSelection() {
             htmlFor="bean-search"
             className="text-sm font-medium text-espresso"
           >
-            搜尋咖啡豆
-            <span className="ml-2 text-xs font-normal text-[rgba(74,58,47,0.58)]">
-              Search beans
-            </span>
+            {isEnglish ? "Search coffee beans" : "搜尋咖啡豆"}
           </label>
           <div className="mt-3 flex min-h-12 items-center gap-3 rounded-full border border-[color:var(--soft-line)] bg-[rgba(255,255,255,0.38)] px-4 focus-within:border-darkgreen focus-within:ring-2 focus-within:ring-[rgba(39,52,33,0.12)]">
             <svg
@@ -141,14 +161,14 @@ export function BeanSelection() {
               spellCheck={false}
               value={searchQuery}
               onChange={(event) => setSearchQuery(event.target.value)}
-              placeholder="搜尋名稱、產地或風味…"
+              placeholder={isEnglish ? "Search name, origin, or tasting notes…" : "搜尋名稱、產地或風味…"}
               className="min-w-0 flex-1 bg-transparent py-3 text-sm text-espresso outline-none placeholder:text-[rgba(74,58,47,0.42)]"
             />
             {searchQuery ? (
               <button
                 type="button"
                 onClick={() => setSearchQuery("")}
-                aria-label="清除搜尋"
+                aria-label={isEnglish ? "Clear search" : "清除搜尋"}
                 className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-lg leading-none text-[rgba(74,58,47,0.55)] hover:bg-[rgba(74,58,47,0.08)] hover:text-espresso"
               >
                 ×
@@ -159,15 +179,12 @@ export function BeanSelection() {
 
         <div>
           <p className="text-sm font-medium text-espresso">
-            依烘焙度篩選
-            <span className="ml-2 text-xs font-normal text-[rgba(74,58,47,0.58)]">
-              Filter by roast level
-            </span>
+            {isEnglish ? "Filter by roast level" : "依烘焙度篩選"}
           </p>
           <div
             className="mt-3 flex flex-wrap gap-2"
             role="group"
-            aria-label="依烘焙度篩選咖啡豆"
+            aria-label={isEnglish ? "Filter beans by roast level" : "依烘焙度篩選咖啡豆"}
           >
             {filters.map((filter) => {
               const isActive = activeFilter === filter.id;
@@ -184,16 +201,7 @@ export function BeanSelection() {
                       : "border-[color:var(--soft-line)] bg-transparent text-espresso hover:border-darkgreen hover:bg-[rgba(167,179,154,0.12)]"
                   }`}
                 >
-                  <span>{filter.label}</span>
-                  <span
-                    className={`text-[0.62rem] uppercase tracking-[0.12em] ${
-                      isActive
-                        ? "text-[rgba(249,246,238,0.68)]"
-                        : "text-[rgba(74,58,47,0.5)]"
-                    }`}
-                  >
-                    {filter.english}
-                  </span>
+                  <span>{isEnglish ? filter.english : filter.label}</span>
                 </button>
               );
             })}
@@ -206,7 +214,7 @@ export function BeanSelection() {
         role="status"
         aria-live="polite"
       >
-        顯示 {visibleBeans.length} 款咖啡豆
+        {isEnglish ? `Showing ${visibleBeans.length} coffees` : `顯示 ${visibleBeans.length} 款咖啡豆`}
       </p>
 
       <div className="mt-5 grid gap-6 lg:grid-cols-3">
@@ -221,7 +229,7 @@ export function BeanSelection() {
           >
             {bean.featured ? (
               <p className="absolute right-5 top-5 rounded-full bg-darkgreen px-3 py-1 text-[0.62rem] uppercase tracking-[0.18em] text-cream">
-                House Pick
+                {isEnglish ? "House Pick" : "店長推薦"}
               </p>
             ) : null}
 
@@ -233,11 +241,9 @@ export function BeanSelection() {
               />
               <div>
                 <h3 className="font-display text-3xl leading-tight text-espresso">
-                  {bean.nameZh}
+                  {isEnglish ? bean.nameEn : bean.nameZh}
                 </h3>
-                <p className="mt-2 text-[0.7rem] uppercase tracking-[0.24em] text-terracotta">
-                  {bean.nameEn}
-                </p>
+                {!isEnglish && <p className="mt-2 text-[0.7rem] uppercase tracking-[0.24em] text-terracotta">{bean.nameEn}</p>}
               </div>
             </div>
 
@@ -251,9 +257,9 @@ export function BeanSelection() {
               />
               <ul
                 className="flex flex-wrap gap-2"
-                aria-label={`${bean.nameZh} 風味`}
+                aria-label={isEnglish ? `${bean.nameEn} tasting notes` : `${bean.nameZh} 風味`}
               >
-                {bean.notes.map((note) => (
+                {(isEnglish ? bean.notesEn : bean.notes).map((note) => (
                   <li
                     key={note}
                     className="rounded-full border border-[color:var(--soft-line)] bg-cream/70 px-3 py-1.5 text-xs"
@@ -265,10 +271,10 @@ export function BeanSelection() {
             </div>
 
             <dl className="space-y-3 text-sm leading-6 text-[rgba(74,58,47,0.78)]">
-              <BeanFact label="產地 Origin" value={bean.origin} />
-              <BeanFact label="處理 Process" value={bean.process} />
-              <BeanFact label="烘焙 Roast" value={bean.roast} />
-              <BeanFact label="沖煮 Brew" value={bean.brew} />
+              <BeanFact label={isEnglish ? "Origin" : "產地"} value={isEnglish ? bean.originEn : bean.origin} />
+              <BeanFact label={isEnglish ? "Process" : "處理"} value={isEnglish ? bean.processEn : bean.process} />
+              <BeanFact label={isEnglish ? "Roast" : "烘焙"} value={isEnglish ? filterRoastEn(bean.roastFilter) : bean.roast} />
+              <BeanFact label={isEnglish ? "Brew" : "沖煮"} value={isEnglish ? bean.brewEn : bean.brew} />
             </dl>
 
             <div className="mt-auto pt-7">
@@ -287,9 +293,9 @@ export function BeanSelection() {
                   target="_blank"
                   rel="noreferrer"
                   className="outline-button inline-flex min-h-11 items-center justify-center px-5 py-2 text-xs uppercase tracking-[0.16em] hover:bg-[rgba(208,127,96,0.08)]"
-                  aria-label={`詢問 ${bean.nameZh}`}
+                  aria-label={isEnglish ? `Order ${bean.nameEn}` : `詢問 ${bean.nameZh}`}
                 >
-                  詢問訂購
+                  {isEnglish ? "Order" : "詢問訂購"}
                 </a>
               </div>
             </div>
@@ -299,17 +305,17 @@ export function BeanSelection() {
         {visibleBeans.length === 0 ? (
           <div className="border-y border-[color:var(--soft-line)] py-12 text-center lg:col-span-3">
             <p className="font-display text-2xl text-espresso">
-              找不到符合條件的咖啡豆
+              {isEnglish ? "No coffees match those filters" : "找不到符合條件的咖啡豆"}
             </p>
             <p className="mt-3 text-sm text-[rgba(74,58,47,0.62)]">
-              試試其他關鍵字，或清除目前的搜尋與烘焙度條件。
+              {isEnglish ? "Try another keyword or clear your search and roast filters." : "試試其他關鍵字，或清除目前的搜尋與烘焙度條件。"}
             </p>
             <button
               type="button"
               onClick={resetSearch}
               className="outline-button mt-6 inline-flex min-h-11 items-center justify-center px-5 py-2 text-xs uppercase tracking-[0.16em] hover:bg-[rgba(208,127,96,0.08)]"
             >
-              清除條件 Reset
+              {isEnglish ? "Reset filters" : "清除條件"}
             </button>
           </div>
         ) : null}
@@ -328,12 +334,13 @@ function BeanFact({ label, value }: { label: string; value: string }) {
 }
 
 function RoastMeter({ level }: { level: number }) {
+  const isEnglish = useSiteLanguage() === "en";
   return (
     <div>
       <div className="mb-2 flex justify-between text-[0.62rem] uppercase tracking-[0.18em] text-[rgba(74,58,47,0.5)]">
-        <span>Light</span>
-        <span>Roast</span>
-        <span>Dark</span>
+        <span>{isEnglish ? "Light" : "淺焙"}</span>
+        <span>{isEnglish ? "Roast" : "烘焙度"}</span>
+        <span>{isEnglish ? "Dark" : "深焙"}</span>
       </div>
       <div className="grid grid-cols-5 gap-1.5" aria-label={`烘焙度 ${level} / 5`}>
         {[1, 2, 3, 4, 5].map((item) => (
@@ -347,4 +354,10 @@ function RoastMeter({ level }: { level: number }) {
       </div>
     </div>
   );
+}
+
+function filterRoastEn(filter: Bean["roastFilter"]) {
+  if (filter === "light-medium") return "Light–Medium";
+  if (filter === "medium-dark") return "Medium–Dark";
+  return "Medium";
 }

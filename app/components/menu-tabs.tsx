@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { type KeyboardEvent, useRef, useState } from "react";
+import { useSiteLanguage } from "@/app/components/language";
 import styles from "../menu.module.css";
 
 type MenuArtwork = {
@@ -235,9 +236,11 @@ const desserts: IllustratedMenuItem[] = [
 function MenuItemCard({
   item,
   dessert = false,
+  isEnglish,
 }: {
   item: IllustratedMenuItem;
   dessert?: boolean;
+  isEnglish: boolean;
 }) {
   return (
     <article className={styles.menuItem}>
@@ -256,14 +259,15 @@ function MenuItemCard({
           />
         ))}
       </div>
-      <h3>{item.name}</h3>
-      <p className={styles.english}>{item.english}</p>
+      <h3>{isEnglish ? item.english : item.name}</h3>
+      {!isEnglish && <p className={styles.english}>{item.english}</p>}
       <p className={styles.price}>${item.price}</p>
     </article>
   );
 }
 
 export function IllustratedMenuTabs() {
+  const isEnglish = useSiteLanguage() === "en";
   const [activeTab, setActiveTab] = useState<Category>("coffee");
   const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
@@ -304,7 +308,7 @@ export function IllustratedMenuTabs() {
 
   return (
     <>
-      <div className={styles.categoryNav} role="tablist" aria-label="菜單分類">
+      <div className={styles.categoryNav} role="tablist" aria-label={isEnglish ? "Menu categories" : "菜單分類"}>
         {tabs.map((tab, index) => {
           const isActive = activeTab === tab.id;
 
@@ -324,7 +328,7 @@ export function IllustratedMenuTabs() {
               onClick={() => selectTab(tab.id)}
               onKeyDown={(event) => handleKeyDown(event, index)}
             >
-              {tab.label} <span>{tab.english}</span>
+              {isEnglish ? tab.english : tab.label}
             </button>
           );
         })}
@@ -353,6 +357,7 @@ export function IllustratedMenuTabs() {
               key={item.english}
               item={item}
               dessert={activeTab === "desserts"}
+              isEnglish={isEnglish}
             />
           ))}
         </div>

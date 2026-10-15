@@ -3,6 +3,7 @@
 import Script from "next/script";
 
 import { instagramPosts } from "@/app/data/instagram-posts";
+import { LanguageText } from "@/app/components/language";
 
 export function InstagramSection() {
   return (
@@ -14,10 +15,10 @@ export function InstagramSection() {
         <div className="max-w-2xl">
           <p className="section-kicker text-xs text-darkgreen">Instagram</p>
           <h2 className="font-display mt-4 text-4xl leading-tight text-espresso sm:text-5xl">
-            跟著 Dream Corner 的日常
+            <LanguageText zh="跟著 Dream Corner 的日常" en="Life at Dream Corner" />
           </h2>
           <p className="mt-2 text-[0.72rem] uppercase tracking-[0.22em] text-darkgreen">
-            Follow Our Journey
+            <LanguageText zh="追蹤我們的日常" en="Follow Our Journey" />
           </p>
         </div>
 
@@ -27,12 +28,12 @@ export function InstagramSection() {
           rel="noopener noreferrer"
           className="outline-button inline-flex min-h-13 items-center justify-center px-6 py-3 text-sm tracking-[0.16em] uppercase hover:bg-[rgba(208,127,96,0.08)]"
         >
-          追蹤 @dreamcornertw
+          <LanguageText zh="追蹤 @dreamcornertw" en="Follow @dreamcornertw" />
         </a>
       </div>
 
       <p className="max-w-3xl text-base leading-8 text-[rgba(74,58,47,0.82)] sm:text-lg">
-        「從空間籌備、飲品測試到開幕消息，追蹤我們，一起看著這個小角落慢慢成形。」
+        <LanguageText zh="「從空間籌備、飲品測試到開幕消息，追蹤我們，一起看著這個小角落慢慢成形。」" en="Follow along as our little corner takes shape, from space planning and drink testing to opening news." />
       </p>
 
       <div className="mt-8 grid grid-cols-1 justify-items-center gap-6 lg:grid-cols-2">
@@ -63,7 +64,7 @@ export function InstagramSection() {
                 rel="noopener noreferrer"
                 className="block p-5 text-center text-sm text-darkgreen"
               >
-                View this post on Instagram
+                <LanguageText zh="在 Instagram 查看這則貼文" en="View this post on Instagram" />
               </a>
             </blockquote>
           </div>

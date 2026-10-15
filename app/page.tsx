@@ -14,29 +14,34 @@ import {
   WaveLine,
 } from "@/app/components/site-icons";
 import { menuCategories, menuPreviewNotice } from "@/app/data/menu";
+import { LanguageText } from "@/app/components/language";
 
 const storyHighlights = [
   {
     title: "好咖啡",
     english: "Good Coffee",
+    descriptionEn: "A cup of coffee worth coming back to, for all the ordinary moments that matter.",
     description: "以日常也想一再回來的那杯咖啡，陪伴每個普通卻值得的時刻。",
     image: "/coffee.svg",
   },
   {
     title: "美味甜點",
     english: "Tasty Desserts",
+    descriptionEn: "A sweet reason to slow down, with just enough comfort and a brighter mood.",
     description: "讓甜點放慢節奏的理由，留下剛剛好的飽足與好心情。",
     image: "/cake.svg",
   },
   {
     title: "更明亮的每一天",
     english: "Brighter Days",
+    descriptionEn: "A little tropical warmth and neighborhood kindness, turning a pause into a reset.",
     description: "把熱帶暖意與街角人情帶進生活裡，讓停留變成一種充電。",
     image: "/sun.svg",
   },
   {
     title: "小小角落",
     english: "A Small Corner",
+    descriptionEn: "No need for noise: just a welcoming, easygoing place to settle into in Qingpu.",
     description: "不追求喧鬧，只想在青埔留一個舒適、自然、容易靠近的位置。",
     image: "/plant.svg",
   },
@@ -47,18 +52,21 @@ const openingCards = [
     label: "位置",
     english: "Location",
     value: "青埔，台灣",
+    valueEn: "Qingpu, Taiwan",
     detail: "Qingpu, Taiwan",
   },
   {
     label: "營業時間",
     english: "Hours",
     value: "即將公告",
+    valueEn: "Coming soon",
     detail: "To be announced",
   },
   {
     label: "開幕資訊",
     english: "Opening",
     value: "待正式發布",
+    valueEn: "To be announced",
     detail: "Details coming soon",
   },
 ];
@@ -70,7 +78,7 @@ export default function Home() {
         href="#content"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-cream focus:px-4 focus:py-2 focus:text-sm focus:text-terracotta"
       >
-        跳到主要內容 Skip to content
+        <LanguageText zh="跳到主要內容" en="Skip to content" />
       </a>
 
       <SiteHeader />
@@ -86,7 +94,7 @@ export default function Home() {
             <div className="relative z-10 flex flex-col gap-8">
               <div className="flex flex-wrap items-center gap-4">
                 <span className="section-kicker text-xs text-darkgreen">
-                  Coffee • People • A Brighter Tomorrow
+                  <LanguageText zh="咖啡 • 人情 • 更明亮的明天" en="Coffee • People • A Brighter Tomorrow" />
                 </span>
               </div>
 
@@ -101,11 +109,11 @@ export default function Home() {
                     priority
                   />
                   <p className="max-w-md text-base leading-8 text-[rgba(74,58,47,0.82)] sm:text-lg">
-                    在青埔留下一個溫暖的小角落，用好咖啡、舒服早午餐，陪你把平凡的一天慢慢變亮。
+                    <LanguageText zh="在青埔留下一個溫暖的小角落，用好咖啡、舒服早午餐，陪你把平凡的一天慢慢變亮。" en="A warm little corner in Qingpu, serving good coffee and easy brunch to brighten your everyday." />
                   </p>
                 </div>
                 <p className="max-w-lg text-sm uppercase tracking-[0.28em] text-darkgreen sm:text-[0.82rem]">
-                  A small corner for good coffee, easy brunch, and brighter days.
+                  <LanguageText zh="好咖啡、悠閒早午餐，讓每一天更明亮。" en="A small corner for good coffee, easy brunch, and brighter days." />
                 </p>
               </div>
 
@@ -114,13 +122,13 @@ export default function Home() {
                   href="/menu"
                   className="outline-button inline-flex min-h-13 items-center justify-center px-7 py-3 text-sm tracking-[0.18em] uppercase hover:bg-[rgba(208,127,96,0.08)]"
                 >
-                  飲品菜單 View Menu
+                  <LanguageText zh="飲品菜單" en="View Menu" />
                 </Link>
                 <a
                   href="#opening"
                   className="inline-flex min-h-13 items-center justify-center rounded-full border border-[color:var(--soft-line)] px-7 py-3 text-sm tracking-[0.12em] uppercase text-espresso hover:bg-[rgba(167,179,154,0.12)]"
                 >
-                  營業資訊 Opening Info
+                  <LanguageText zh="營業資訊" en="Opening Info" />
                 </a>
               </div>
 
@@ -179,17 +187,17 @@ export default function Home() {
           className="mx-auto w-full max-w-7xl px-5 py-20 sm:px-8 md:py-24"
         >
           <div className="mx-auto max-w-3xl text-center">
-            <p className="section-kicker text-xs text-terracotta">Our Story</p>
+              <p className="section-kicker text-xs text-terracotta"><LanguageText zh="品牌故事" en="Our Story" /></p>
             <h2 className="font-display mt-5 text-4xl leading-tight text-espresso sm:text-5xl">
-              一個街角，一點熱帶暖意，
+              <LanguageText zh="一個街角，一點熱帶暖意，" en="A neighborhood corner, a little tropical warmth," />
               <br className="hidden sm:block" />
-              一份更明亮的日常。
+              <LanguageText zh="一份更明亮的日常。" en="and brighter everyday moments." />
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-[rgba(74,58,47,0.82)] sm:text-lg">
-              Dream Corner 想把小島的鬆弛與鄰里的親切帶進每天的生活裡。來這裡，不一定要趕著完成什麼，只要喝杯咖啡、吃點早午餐，讓心情慢慢回到舒服的步調。
+              <LanguageText zh="Dream Corner 想把小島的鬆弛與鄰里的親切帶進每天的生活裡。來這裡，不一定要趕著完成什麼，只要喝杯咖啡、吃點早午餐，讓心情慢慢回到舒服的步調。" en="Dream Corner brings the ease of island life and the warmth of a neighborhood into every day. There is nothing you need to rush to finish here. Enjoy a coffee or brunch, and let your day find a gentler rhythm." />
             </p>
             <p className="mx-auto mt-4 max-w-2xl text-sm uppercase tracking-[0.22em] text-terracotta">
-              Inspired by tropical warmth, made for everyday pauses in Qingpu.
+              <LanguageText zh="靈感來自熱帶暖意，為青埔日常留一段停歇。" en="Inspired by tropical warmth, made for everyday pauses in Qingpu." />
             </p>
           </div>
 
@@ -211,13 +219,12 @@ export default function Home() {
                   />
                   <div className="space-y-3">
                     <h3 className="font-display text-2xl leading-snug text-espresso">
-                      {item.title}
+                      <LanguageText zh={item.title} en={item.english} />
                     </h3>
                     <p className="text-[0.72rem] uppercase tracking-[0.24em] text-terracotta">
-                      {item.english}
                     </p>
                     <p className="text-sm leading-7 text-[rgba(74,58,47,0.78)]">
-                      {item.description}
+                      <LanguageText zh={item.description} en={item.descriptionEn} />
                     </p>
                   </div>
                 </article>
@@ -232,14 +239,14 @@ export default function Home() {
         >
           <div className="mx-auto grid w-full max-w-7xl gap-12 px-5 py-20 sm:px-8 md:py-24 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:items-start">
             <div className="lg:sticky lg:top-28">
-              <p className="section-kicker text-xs text-terracotta">Menu</p>
+              <p className="section-kicker text-xs text-terracotta"><LanguageText zh="菜單" en="Menu" /></p>
               <h2 className="font-display mt-5 text-4xl leading-tight text-espresso sm:text-5xl">
-                飲品菜單已獨立成頁，
+                <LanguageText zh="飲品菜單已獨立成頁，" en="Our menu has its own page," />
                 <br />
-                版型也準備好了。
+                <LanguageText zh="版型也準備好了。" en="ready for you to explore." />
               </h2>
               <p className="mt-6 max-w-xl text-base leading-8 text-[rgba(74,58,47,0.82)] sm:text-lg">
-                我把 Dream Corner 的飲品菜單整理成獨立頁面，延續品牌指南中的奶油、鼠尾草與陶土色，閱讀節奏更像一張真正可以上線的咖啡菜單。
+                <LanguageText zh="我把 Dream Corner 的飲品菜單整理成獨立頁面，延續品牌指南中的奶油、鼠尾草與陶土色，閱讀節奏更像一張真正可以上線的咖啡菜單。" en="Explore the Dream Corner menu in a dedicated page, styled with our cream, sage, and terracotta palette and laid out like a cafe menu." />
               </p>
               {/* <div
                 role="note"
@@ -254,7 +261,7 @@ export default function Home() {
                 href="/menu"
                 className="outline-button mt-6 inline-flex min-h-13 items-center justify-center px-7 py-3 text-sm tracking-[0.18em] uppercase hover:bg-[rgba(208,127,96,0.08)]"
               >
-                前往飲品菜單 Open Menu
+                <LanguageText zh="前往飲品菜單" en="Open Menu" />
               </Link>
             </div>
 
@@ -267,14 +274,13 @@ export default function Home() {
                   <div className="flex flex-col gap-3 border-b border-[color:var(--soft-line)] pb-5 sm:flex-row sm:items-end sm:justify-between">
                     <div>
                       <h3 className="font-display text-3xl text-espresso">
-                        {category.nameZh}
+                        <LanguageText zh={category.nameZh} en={category.nameEn} />
                       </h3>
                       <p className="mt-2 text-[0.72rem] uppercase tracking-[0.24em] text-terracotta">
-                        {category.nameEn}
                       </p>
                     </div>
                     <p className="max-w-md text-sm leading-7 text-[rgba(74,58,47,0.78)]">
-                      {category.description}
+                      <LanguageText zh={category.descriptionZh} en={category.description} />
                     </p>
                   </div>
 
@@ -286,10 +292,7 @@ export default function Home() {
                       >
                         <div className="min-w-0">
                           <p className="font-display text-2xl leading-snug text-espresso">
-                            {item.nameZh}
-                          </p>
-                          <p className="mt-1 text-[0.72rem] uppercase tracking-[0.24em] text-terracotta">
-                            {item.nameEn}
+                            <LanguageText zh={item.nameZh} en={item.nameEn} />
                           </p>
                         </div>
                         <p className="shrink-0 text-left text-lg tracking-[0.08em] text-espresso sm:text-right">
@@ -305,10 +308,10 @@ export default function Home() {
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                   <div>
                     <p className="section-kicker text-[0.68rem] text-terracotta">
-                      Editable Data
+                      <LanguageText zh="菜單資訊" en="Menu Details" />
                     </p>
                     <p className="mt-3 text-base leading-8 text-[rgba(74,58,47,0.85)]">
-                      目前示意價格取自品牌指南中的 menu example。若之後有正式品項、冰熱選項或客製資訊，只要更新資料檔，就能同步反映到菜單頁。
+                      <LanguageText zh="目前示意價格取自品牌指南中的 menu example。若之後有正式品項、冰熱選項或客製資訊，只要更新資料檔，就能同步反映到菜單頁。" en="Sample prices are based on the menu examples in the brand guide. When final items, serving options, or customizations are ready, they can be updated on the menu page." />
                     </p>
                   </div>
                   <Image  
@@ -330,15 +333,15 @@ export default function Home() {
           <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
             <div>
               <p className="section-kicker text-xs text-terracotta">
-                Opening Information
+                <LanguageText zh="營業資訊" en="Opening Information" />
               </p>
               <h2 className="font-display mt-5 text-4xl leading-tight text-espresso sm:text-5xl">
-                準備開張的消息，
+                <LanguageText zh="準備開張的消息，" en="Opening news is on its way;" />
                 <br />
-                我們先把位置留好。
+                <LanguageText zh="我們先把位置留好。" en="for now, save us a spot." />
               </h2>
               <p className="mt-6 max-w-xl text-base leading-8 text-[rgba(74,58,47,0.82)] sm:text-lg">
-                為了避免杜撰資訊，這裡只放目前從素材中能確定的內容，並保留了地址、營業時間、聯絡方式與正式開幕日期的欄位。
+                <LanguageText zh="為了避免杜撰資訊，這裡只放目前從素材中能確定的內容，並保留了地址、營業時間、聯絡方式與正式開幕日期的欄位。" en="We are sharing only confirmed details for now. Address, hours, contact information, and the opening date will be added once finalized." />
               </p>
             </div>
 
@@ -350,19 +353,13 @@ export default function Home() {
                 >
                   <div>
                     <p className="section-kicker text-[0.72rem] text-terracotta">
-                      {card.label}
-                    </p>
-                    <p className="mt-2 text-[0.72rem] uppercase tracking-[0.24em] text-[rgba(74,58,47,0.58)]">
-                      {card.english}
+                      <LanguageText zh={card.label} en={card.english} />
                     </p>
                   </div>
                   <div>
                     <h3 className="font-display text-3xl leading-tight text-espresso">
-                      {card.value}
+                      <LanguageText zh={card.value} en={card.valueEn} />
                     </h3>
-                    <p className="mt-3 text-xs uppercase tracking-[0.22em] text-[rgba(74,58,47,0.6)]">
-                      {card.detail}
-                    </p>
                   </div>
                 </article>
               ))}

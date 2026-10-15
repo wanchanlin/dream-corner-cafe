@@ -5,6 +5,7 @@ import Link from "next/link";
 import { BeanSelection } from "@/app/components/bean-selection";
 import { SiteFooter, SiteHeader } from "@/app/components/nav";
 import { LeafIcon, WaveLine } from "@/app/components/site-icons";
+import { LanguageText } from "@/app/components/language";
 
 export const metadata: Metadata = {
   title: "Dream Corner | 新鮮烘焙咖啡豆",
@@ -15,18 +16,27 @@ export const metadata: Metadata = {
 const roastGuide = [
   {
     level: "淺焙 Light",
+    levelEn: "Light Roast",
     taste: "明亮、果香、酸甜清楚",
+    tasteEn: "Bright, fruity, and clearly sweet-tart",
     brew: "適合手沖與喜歡產地特色的人",
+    brewEn: "Great for pour-over and exploring origin character",
   },
   {
     level: "中焙 Medium",
+    levelEn: "Medium Roast",
     taste: "甜感、堅果、平衡順口",
+    tasteEn: "Sweet, nutty, balanced, and smooth",
     brew: "適合美式、拿鐵與每天喝的咖啡",
+    brewEn: "A daily favorite for Americanos and lattes",
   },
   {
     level: "深焙 Dark",
+    levelEn: "Dark Roast",
     taste: "厚實、可可、低酸度",
+    tasteEn: "Full-bodied cocoa with gentle acidity",
     brew: "適合義式、奶咖與偏好濃郁口感的人",
+    brewEn: "Ideal for espresso, milk coffee, and bolder cups",
   },
 ];
 
@@ -37,7 +47,7 @@ export default function BeansPage() {
         href="#content"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-cream focus:px-4 focus:py-2 focus:text-sm focus:text-terracotta"
       >
-        跳到咖啡豆內容 Skip to content
+        <LanguageText zh="跳到咖啡豆內容" en="Skip to content" />
       </a>
 
       <SiteHeader currentPath="/beans" />
@@ -48,15 +58,15 @@ export default function BeansPage() {
           <div className="relative mx-auto grid w-full max-w-7xl gap-12 px-5 py-16 sm:px-8 md:py-20 lg:grid-cols-[minmax(0,1fr)_minmax(340px,0.78fr)] lg:items-center">
             <div>
               <p className="section-kicker text-xs text-terracotta">
-                Roasted Coffee Beans
+                <LanguageText zh="新鮮烘焙咖啡豆" en="Roasted Coffee Beans" />
               </p>
               <h1 className="font-display mt-6 max-w-3xl text-[clamp(3.2rem,7vw,6.2rem)] leading-[0.98] text-espresso [text-wrap:balance]">
-                剛烘好的香氣，
+                <LanguageText zh="剛烘好的香氣，" en="Freshly roasted," />
                 <br />
-                帶回你的日常。
+                <LanguageText zh="帶回你的日常。" en="for your everyday." />
               </h1>
               <p className="mt-7 max-w-2xl text-lg leading-9 text-[rgba(74,58,47,0.82)]">
-                Dream Corner 提供小批次新鮮烘焙咖啡豆。從清爽果香到濃厚可可感，依照你使用的器具與喜歡的味道，找到適合的一包。
+                <LanguageText zh="Dream Corner 提供小批次新鮮烘焙咖啡豆。從清爽果香到濃厚可可感，依照你使用的器具與喜歡的味道，找到適合的一包。" en="Dream Corner roasts coffee in small batches. From bright fruit to rich cocoa, find a bag that suits your brewer and the flavors you love." />
               </p>
 
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -64,13 +74,13 @@ export default function BeansPage() {
                   href="#selection"
                   className="outline-button inline-flex min-h-13 items-center justify-center px-7 py-3 text-sm uppercase tracking-[0.18em] hover:bg-[rgba(208,127,96,0.08)]"
                 >
-                  選擇咖啡豆 Shop Beans
+                  <LanguageText zh="選擇咖啡豆" en="Shop Beans" />
                 </a>
                 <a
                   href="#roast-guide"
                   className="inline-flex min-h-13 items-center justify-center rounded-full border border-[color:var(--soft-line)] px-7 py-3 text-sm uppercase tracking-[0.12em] text-espresso hover:bg-[rgba(167,179,154,0.12)]"
                 >
-                  看烘焙指南 Roast Guide
+                  <LanguageText zh="看烘焙指南" en="Roast Guide" />
                 </a>
               </div>
             </div>
@@ -130,16 +140,16 @@ export default function BeansPage() {
           <div className="grid gap-8  pb-10 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
             <div>
               <p className="section-kicker text-xs text-terracotta">
-                Current Selection
+                <LanguageText zh="本期豆單" en="Current Selection" />
               </p>
               <p className="mt-3 text-sm text-[rgba(74,58,47,0.65)]">
-                每包 250 g · 小批次烘焙
+                <LanguageText zh="每包 250 g · 小批次烘焙" en="250 g per bag · Small-batch roasted" />
               </p>
             </div>
             <h2 className="font-display text-4xl leading-tight text-espresso sm:text-5xl [text-wrap:balance]">
-              先選你想喝到的味道，
+              <LanguageText zh="先選你想喝到的味道，" en="Choose the flavors you love," />
               <br className="hidden sm:block" />
-              再決定怎麼沖。
+              <LanguageText zh="再決定怎麼沖。" en="then pick your brew." />
             </h2>
           </div>
 
@@ -153,15 +163,15 @@ export default function BeansPage() {
           <div className="mx-auto grid w-full max-w-7xl gap-12 px-5 py-20 sm:px-8 md:py-24 lg:grid-cols-[0.82fr_1.18fr]">
             <div className="lg:sticky lg:top-28 lg:self-start">
               <p className="section-kicker text-xs text-terracotta">
-                Roast Guide
+                <LanguageText zh="烘焙指南" en="Roast Guide" />
               </p>
               <h2 className="font-display mt-5 text-4xl leading-tight text-espresso sm:text-5xl">
-                烘焙度不是強弱，
+                <LanguageText zh="烘焙度不是強弱，" en="Roast level is not a measure of strength;" />
                 <br />
-                是風味的方向。
+                <LanguageText zh="是風味的方向。" en="it guides the flavor." />
               </h2>
               <p className="mt-6 max-w-lg text-base leading-8 text-[rgba(74,58,47,0.8)]">
-                淺焙保留更多花果香，中焙讓甜感與平衡更明顯，深焙則帶出厚實可可與烘烤氣息。沒有最好，只有更適合你的沖煮方式。
+                <LanguageText zh="淺焙保留更多花果香，中焙讓甜感與平衡更明顯，深焙則帶出厚實可可與烘烤氣息。沒有最好，只有更適合你的沖煮方式。" en="Light roasts keep floral and fruity notes; medium roasts bring sweetness and balance; dark roasts offer cocoa and toasted depth. There is no single best roast, only the one that suits your brew." />
               </p>
               <WaveLine className="mt-8 h-6 w-36 text-sage" />
             </div>
@@ -175,14 +185,14 @@ export default function BeansPage() {
                   <span className="text-sm text-terracotta">0{index + 1}</span>
                   <div>
                     <h3 className="font-display text-2xl text-espresso">
-                      {item.level}
+                      <LanguageText zh={item.level} en={item.levelEn} />
                     </h3>
                     <p className="mt-2 text-sm text-[rgba(74,58,47,0.68)]">
-                      {item.taste}
+                      <LanguageText zh={item.taste} en={item.tasteEn} />
                     </p>
                   </div>
                   <p className="text-sm leading-7 text-[rgba(74,58,47,0.78)]">
-                    {item.brew}
+                    <LanguageText zh={item.brew} en={item.brewEn} />
                   </p>
                 </li>
               ))}
@@ -193,16 +203,16 @@ export default function BeansPage() {
         <section className="mx-auto w-full max-w-7xl px-5 py-20 sm:px-8 md:py-24">
           <div className="soft-card grid gap-8 bg-darkgreen p-7 text-cream sm:p-10 lg:grid-cols-[1fr_auto] lg:items-end lg:p-12">
             <div>
-              <p className="section-kicker text-xs text-sage">How to Order</p>
+              <p className="section-kicker text-xs text-sage"><LanguageText zh="訂購方式" en="How to Order" /></p>
               <h2 className="font-display mt-5 max-w-3xl text-4xl leading-tight sm:text-5xl">
-                告訴我們你怎麼沖，
+              <LanguageText zh="告訴我們你怎麼沖，" en="Tell us how you brew," />
                 <br className="hidden sm:block" />
-                我們幫你挑一包。
+                <LanguageText zh="我們幫你挑一包。" en="and we’ll help find your coffee." />
               </h2>
               <div className="mt-7 flex flex-wrap gap-x-7 gap-y-3 text-sm text-[rgba(249,246,238,0.72)]">
-                <span>① 選豆與數量</span>
-                <span>② 原豆或研磨</span>
-                <span>③ 確認取貨與付款</span>
+                <span><LanguageText zh="① 選豆與數量" en="① Choose beans and quantity" /></span>
+                <span><LanguageText zh="② 原豆或研磨" en="② Whole bean or ground" /></span>
+                <span><LanguageText zh="③ 確認取貨與付款" en="③ Confirm pickup and payment" /></span>
               </div>
             </div>
 
@@ -212,7 +222,7 @@ export default function BeansPage() {
               rel="noreferrer"
               className="inline-flex min-h-13 items-center justify-center rounded-full border border-cream px-7 py-3 text-sm uppercase tracking-[0.16em] text-cream hover:bg-cream hover:text-darkgreen"
             >
-              Instagram 詢問訂購 ↗
+              <LanguageText zh="Instagram 詢問訂購 ↗" en="Order via Instagram ↗" />
             </a>
           </div>
 
@@ -220,14 +230,14 @@ export default function BeansPage() {
             <div className="flex items-center gap-4">
               <LeafIcon className="h-10 w-10 text-sage" />
               <p className="max-w-2xl text-sm leading-7 text-[rgba(74,58,47,0.72)]">
-                咖啡豆為農產品，每批風味與供應可能不同。頁面為販售說明，實際豆單、烘焙日與價格請以訂購回覆為準。
+                <LanguageText zh="咖啡豆為農產品，每批風味與供應可能不同。頁面為販售說明，實際豆單、烘焙日與價格請以訂購回覆為準。" en="Coffee is an agricultural product, so each batch may vary in flavor and availability. Current beans, roast dates, and prices are confirmed when you order." />
               </p>
             </div>
             <Link
               href="/menu"
               className="shrink-0 text-sm uppercase tracking-[0.16em] text-terracotta hover:text-espresso"
             >
-              看店內飲品 Menu →
+              <LanguageText zh="看店內飲品 Menu →" en="Explore the cafe menu →" />
             </Link>
           </div>
         </section>

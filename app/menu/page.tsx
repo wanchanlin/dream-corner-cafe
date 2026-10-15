@@ -3,6 +3,7 @@ import { SiteFooter, SiteHeader } from "@/app/components/nav";
 import { IllustratedMenuTabs } from "../components/menu-tabs";
 import styles from "../menu.module.css";
 import Link from "next/link";
+import { LanguageText } from "@/app/components/language";
 
 export const metadata: Metadata = {
   title: "Dream Corner | 飲品菜單",
@@ -18,7 +19,7 @@ export default function MenuPage() {
         href="#menu-sections"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-cream focus:px-4 focus:py-2 focus:text-sm focus:text-darkgreen"
       >
-        跳到菜單內容 Skip to content
+        <LanguageText zh="跳到菜單內容" en="Skip to menu content" />
       </a>
 
       <SiteHeader currentPath="/menu" />
@@ -31,12 +32,12 @@ export default function MenuPage() {
 
           <div className="mx-auto grid w-full max-w-7xl gap-10 px-5 py-16 sm:px-8 md:py-20 lg:grid-cols-[minmax(0,1.08fr)_minmax(320px,0.92fr)] lg:items-center">
             <div className="relative z-10">
-              <p className="section-kicker text-xs text-terracotta">Our Menu</p>
+              <p className="section-kicker text-xs text-terracotta"><LanguageText zh="店內菜單" en="Our Menu" /></p>
               <h1 className="font-display mt-6 text-[clamp(3rem,7vw,6rem)] leading-[0.96] text-espresso">
-               飲品菜單
+               <LanguageText zh="飲品菜單" en="Cafe Menu" />
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-9 text-[rgba(74,58,47,0.82)]">
-               在轉角，找到今天想喝的那一杯。
+               <LanguageText zh="在轉角，找到今天想喝的那一杯。" en="Find your favorite cup around the corner." />
               </p>
 
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -44,13 +45,13 @@ export default function MenuPage() {
                   href="/menu"
                   className="outline-button inline-flex min-h-13 items-center justify-center px-7 py-3 text-sm tracking-[0.18em] uppercase hover:bg-[rgba(208,127,96,0.08)]"
                 >
-                  看菜單 View Menu
+                  <LanguageText zh="看菜單" en="View Menu" />
                 </Link>
                 <Link
                   href="/"
                   className="inline-flex min-h-13 items-center justify-center rounded-full border border-[color:var(--soft-line)] px-7 py-3 text-sm tracking-[0.12em] uppercase text-espresso hover:bg-[rgba(167,179,154,0.12)]"
                 >
-                  回首頁 Back Home
+                  <LanguageText zh="回首頁" en="Back Home" />
                 </Link>
               </div>
             </div>
@@ -66,9 +67,9 @@ export default function MenuPage() {
         </section>
         <section className={styles.menuSheet} aria-labelledby="menu-title">
           <header className={styles.intro}>
-            <p className={styles.eyebrow}>Menu</p>
-            <h1 id="menu-title">飲品菜單</h1>
-            <p className={styles.lede}>一杯好咖啡，開啟更好的日常。</p>
+            <p className={styles.eyebrow}><LanguageText zh="菜單" en="Menu" /></p>
+            <h1 id="menu-title"><LanguageText zh="飲品菜單" en="Cafe Menu" /></h1>
+            <p className={styles.lede}><LanguageText zh="一杯好咖啡，開啟更好的日常。" en="Good coffee makes an everyday moment brighter." /></p>
           </header>
 
           <IllustratedMenuTabs />
