@@ -208,7 +208,7 @@ export default function Home() {
               return (
                 <article
                   key={item.english}
-                  className="soft-card flex h-full flex-col gap-5 bg-[rgba(255,255,255,0.56)] p-6"
+                  className=" flex h-full flex-col gap-5 p-6"
                 >
                   <Image
                     src={item.image}
@@ -235,15 +235,31 @@ export default function Home() {
 
         <section
           id="menu"
-          className="border-y border-[color:var(--soft-line)] bg-[rgba(203,181,155,0.18)]"
+          className="relative isolate overflow-hidden border-y border-[color:var(--soft-line)] bg-[url('/drinks.webp')] bg-cover bg-center"
         >
-          <div className="mx-auto grid w-full max-w-7xl gap-12 px-5 py-20 sm:px-8 md:py-24 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:items-start">
+          <video
+            aria-hidden="true"
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster="/drinks.webp"
+            preload="none"
+            className="pointer-events-none absolute inset-0 z-0 hidden h-full w-full object-cover motion-safe:block"
+          >
+             <source src="/background.mp4" type="video/mp4" />
+
+          </video>
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 z-0 bg-[rgba(249,246,238,0.82)]"
+          />
+          <div className="relative z-10 mx-auto grid w-full max-w-7xl gap-12 px-5 py-20 sm:px-8 md:py-24 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:items-start">
             <div className="lg:sticky lg:top-28">
               <p className="section-kicker text-xs text-terracotta"><LanguageText zh="菜單" en="Menu" /></p>
               <h2 className="font-display mt-5 text-4xl leading-tight text-espresso sm:text-5xl">
-                <LanguageText zh="飲品菜單已獨立成頁，" en="Our menu has its own page," />
+                <LanguageText zh="飲品菜單" en="Our menu" />
                 <br />
-                <LanguageText zh="版型也準備好了。" en="ready for you to explore." />
               </h2>
               <p className="mt-6 max-w-xl text-base leading-8 text-[rgba(74,58,47,0.82)] sm:text-lg">
                 <LanguageText zh="我把 Dream Corner 的飲品菜單整理成獨立頁面，延續品牌指南中的奶油、鼠尾草與陶土色，閱讀節奏更像一張真正可以上線的咖啡菜單。" en="Explore the Dream Corner menu in a dedicated page, styled with our cream, sage, and terracotta palette and laid out like a cafe menu." />
