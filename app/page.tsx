@@ -235,7 +235,7 @@ export default function Home() {
 
         <section
           id="menu"
-          className="relative isolate overflow-hidden border-y border-[color:var(--soft-line)] bg-[url('/drinks.webp')] bg-cover bg-center"
+          className="relative isolate overflow-hidden border-y border-[color:var(--soft-line)] bg-[url('/background.webp')] bg-cover bg-center"
         >
           <video
             aria-hidden="true"
@@ -243,7 +243,7 @@ export default function Home() {
             muted
             loop
             playsInline
-            poster="/drinks.webp"
+            poster="/background.webp"
             preload="none"
             className="pointer-events-none absolute inset-0 z-0 hidden h-full w-full object-cover motion-safe:block"
           >
@@ -285,7 +285,7 @@ export default function Home() {
               {menuCategories.map((category) => (
                 <article
                   key={category.id}
-                  className="soft-card bg-cream p-6 sm:p-8"
+                  className="soft-card bg-white p-6 sm:p-8"
                 >
                   <div className="flex flex-col gap-3 border-b border-[color:var(--soft-line)] pb-5 sm:flex-row sm:items-end sm:justify-between">
                     <div>
