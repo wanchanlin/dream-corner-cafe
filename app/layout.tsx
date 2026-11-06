@@ -9,9 +9,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="zh-Hant"   
-    >
+    <html lang="zh-Hant" data-scroll-behavior="smooth">
       <body suppressHydrationWarning className="min-h-full flex flex-col">
         {children}
       </body>

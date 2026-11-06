@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { ButtonLink } from "@/app/components/button";
 
 import { InstagramSection } from "@/app/components/instagram-section";
 import { SiteFooter, SiteHeader } from "@/app/components/nav";
@@ -118,18 +118,12 @@ export default function Home() {
               </div>
 
               <div className="flex flex-col gap-4 sm:flex-row">
-                <Link
-                  href="/menu"
-                  className="outline-button inline-flex min-h-13 items-center justify-center px-7 py-3 text-sm tracking-[0.18em] uppercase hover:bg-[rgba(208,127,96,0.08)]"
-                >
+                <ButtonLink href="/menu" variant="primary">
                   <LanguageText zh="飲品菜單" en="View Menu" />
-                </Link>
-                <a
-                  href="#opening"
-                  className="inline-flex min-h-13 items-center justify-center rounded-full border border-[color:var(--soft-line)] px-7 py-3 text-sm tracking-[0.12em] uppercase text-espresso hover:bg-[rgba(167,179,154,0.12)]"
-                >
+                </ButtonLink>
+                <ButtonLink href="#opening" variant="secondary">
                   <LanguageText zh="營業資訊" en="Opening Info" />
-                </a>
+                </ButtonLink>
               </div>
 
               {/* <div className="grid gap-4 text-sm sm:grid-cols-3">
@@ -273,12 +267,9 @@ export default function Home() {
                 </p>
                 <p className="mt-2">{menuPreviewNotice}</p>
               </div> */}
-              <Link
-                href="/menu"
-                className="outline-button mt-6 inline-flex min-h-13 items-center justify-center px-7 py-3 text-sm tracking-[0.18em] uppercase hover:bg-[rgba(208,127,96,0.08)]"
-              >
+              <ButtonLink href="/menu" variant="primary" className="mt-6">
                 <LanguageText zh="前往飲品菜單" en="Open Menu" />
-              </Link>
+              </ButtonLink>
             </div>
 
             <div className="grid gap-5">
