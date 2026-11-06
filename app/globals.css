@@ -72,12 +72,6 @@ button:focus-visible {
   font-family: var(--font-latin-stack);
 }
 
-.outline-button {
-  border: 1.5px solid var(--darkgreen);
-  border-radius: 9999px;
-  color: var(--darkgreen);
-}
-
 .site-button {
   display: inline-flex;
   min-height: 3.25rem;
@@ -113,6 +107,26 @@ button:focus-visible {
 .site-button--secondary:hover {
   background: var(--darkgreen);
   color: var(--cream);
+}
+
+.site-button--on-dark {
+  border-color: var(--cream);
+  color: var(--cream);
+}
+
+.site-button--on-dark:hover {
+  background: var(--cream);
+  color: var(--darkgreen);
+}
+
+.site-button--on-dark:focus-visible {
+  outline-color: var(--cream);
+}
+
+.site-button--compact {
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
 }
 
 .site-button:active {

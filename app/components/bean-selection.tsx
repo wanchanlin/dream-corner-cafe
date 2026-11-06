@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { useSiteLanguage } from "@/app/components/language";
+import { Button, ButtonAnchor } from "@/app/components/button";
 
 type RoastFilter = "all" | "light-medium" | "medium" | "medium-dark";
 
@@ -288,15 +289,16 @@ export function BeanSelection() {
                     NT$ {bean.price}
                   </span>
                 </p>
-                <a
+                <ButtonAnchor
                   href={`https://www.instagram.com/dreamcornertw/?bean=${bean.id}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="outline-button inline-flex min-h-11 items-center justify-center px-5 py-2 text-xs uppercase tracking-[0.16em] hover:bg-[rgba(208,127,96,0.08)]"
+                  variant="primary"
+                  className="min-h-11 px-5 py-2 text-xs"
                   aria-label={isEnglish ? `Order ${bean.nameEn}` : `詢問 ${bean.nameZh}`}
                 >
                   {isEnglish ? "Order" : "詢問訂購"}
-                </a>
+                </ButtonAnchor>
               </div>
             </div>
           </article>
@@ -310,13 +312,13 @@ export function BeanSelection() {
             <p className="mt-3 text-sm text-[rgba(74,58,47,0.62)]">
               {isEnglish ? "Try another keyword or clear your search and roast filters." : "試試其他關鍵字，或清除目前的搜尋與烘焙度條件。"}
             </p>
-            <button
-              type="button"
+            <Button
               onClick={resetSearch}
-              className="outline-button mt-6 inline-flex min-h-11 items-center justify-center px-5 py-2 text-xs uppercase tracking-[0.16em] hover:bg-[rgba(208,127,96,0.08)]"
+              variant="secondary"
+              className="mt-6 min-h-11 px-5 py-2 text-xs"
             >
               {isEnglish ? "Reset filters" : "清除條件"}
-            </button>
+            </Button>
           </div>
         ) : null}
       </div>

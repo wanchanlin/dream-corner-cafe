@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { SiteFooter, SiteHeader } from "@/app/components/nav";
+import { ButtonLink } from "@/app/components/button";
 import { IllustratedMenuTabs } from "../components/menu-tabs";
 import styles from "../menu.module.css";
-import Link from "next/link";
 import { LanguageText } from "@/app/components/language";
 
 export const metadata: Metadata = {
@@ -41,18 +41,12 @@ export default function MenuPage() {
               </p>
 
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <Link
-                  href="/menu"
-                  className="outline-button inline-flex min-h-13 items-center justify-center px-7 py-3 text-sm tracking-[0.18em] uppercase hover:bg-[rgba(208,127,96,0.08)]"
-                >
+                <ButtonLink href="/menu" variant="primary">
                   <LanguageText zh="看菜單" en="View Menu" />
-                </Link>
-                <Link
-                  href="/"
-                  className="inline-flex min-h-13 items-center justify-center rounded-full border border-[color:var(--soft-line)] px-7 py-3 text-sm tracking-[0.12em] uppercase text-espresso hover:bg-[rgba(167,179,154,0.12)]"
-                >
+                </ButtonLink>
+                <ButtonLink href="/" variant="secondary">
                   <LanguageText zh="回首頁" en="Back Home" />
-                </Link>
+                </ButtonLink>
               </div>
             </div>
 

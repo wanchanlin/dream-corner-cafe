@@ -30,3 +30,13 @@ export function ButtonLink({
 }: ButtonLinkProps) {
   return <Link className={buttonClass(variant, className)} {...props} />;
 }
+
+type ButtonAnchorProps = ComponentProps<"a"> & ButtonStyle;
+
+export function ButtonAnchor({
+  variant = "primary",
+  className = "",
+  ...props
+}: ButtonAnchorProps) {
+  return <a className={buttonClass(variant, className)} {...props} />;
+}

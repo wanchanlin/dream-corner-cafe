@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { ButtonAnchor, ButtonLink } from "@/app/components/button";
 
 import { BeanSelection } from "@/app/components/bean-selection";
 import { SiteFooter, SiteHeader } from "@/app/components/nav";
@@ -70,18 +71,12 @@ export default function BeansPage() {
               </p>
 
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <a
-                  href="#selection"
-                  className="outline-button inline-flex min-h-13 items-center justify-center px-7 py-3 text-sm uppercase tracking-[0.18em] hover:bg-[rgba(208,127,96,0.08)]"
-                >
+                <ButtonLink href="#selection" variant="primary">
                   <LanguageText zh="選擇咖啡豆" en="Shop Beans" />
-                </a>
-                <a
-                  href="#roast-guide"
-                  className="inline-flex min-h-13 items-center justify-center rounded-full border border-[color:var(--soft-line)] px-7 py-3 text-sm uppercase tracking-[0.12em] text-espresso hover:bg-[rgba(167,179,154,0.12)]"
-                >
+                </ButtonLink>
+                <ButtonLink href="#roast-guide" variant="secondary">
                   <LanguageText zh="看烘焙指南" en="Roast Guide" />
-                </a>
+                </ButtonLink>
               </div>
             </div>
 
@@ -216,14 +211,15 @@ export default function BeansPage() {
               </div>
             </div>
 
-            <a
+            <ButtonAnchor
               href="https://www.instagram.com/dreamcornertw/"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex min-h-13 items-center justify-center rounded-full border border-cream px-7 py-3 text-sm uppercase tracking-[0.16em] text-cream hover:bg-cream hover:text-darkgreen"
+              variant="secondary"
+              className="site-button--on-dark"
             >
               <LanguageText zh="Instagram 詢問訂購 ↗" en="Order via Instagram ↗" />
-            </a>
+            </ButtonAnchor>
           </div>
 
           <div className="mt-8 flex flex-col gap-5 border-t border-[color:var(--soft-line)] pt-8 sm:flex-row sm:items-center sm:justify-between">

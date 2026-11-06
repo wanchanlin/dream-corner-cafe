@@ -1,6 +1,7 @@
 "use client";
 
 import Script from "next/script";
+import { ButtonAnchor } from "@/app/components/button";
 
 import { instagramPosts } from "@/app/data/instagram-posts";
 import { LanguageText } from "@/app/components/language";
@@ -22,14 +23,14 @@ export function InstagramSection() {
           </p>
         </div>
 
-        <a
+        <ButtonAnchor
           href="https://www.instagram.com/dreamcornertw/"
           target="_blank"
           rel="noopener noreferrer"
-          className="outline-button inline-flex min-h-13 items-center justify-center px-6 py-3 text-sm tracking-[0.16em] uppercase hover:bg-[rgba(208,127,96,0.08)]"
+          variant="primary"
         >
           <LanguageText zh="追蹤 @dreamcornertw" en="Follow @dreamcornertw" />
-        </a>
+        </ButtonAnchor>
       </div>
 
       <p className="max-w-3xl text-base leading-8 text-[rgba(74,58,47,0.82)] sm:text-lg">

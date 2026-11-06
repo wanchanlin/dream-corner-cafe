@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { Button, ButtonLink } from "@/app/components/button";
 import { useEffect, useState } from "react";
 import { useSiteLanguage } from "@/app/components/language";
 
@@ -93,14 +94,14 @@ export function SiteHeader({ currentPath = "/" }: SiteHeaderProps) {
           })}
         </nav>
 
-        <button
-          type="button"
+        <Button
           onClick={toggleLanguage}
           aria-label={isEnglish ? "Switch to Traditional Chinese" : "切換至英文"}
-          className="shrink-0 rounded-full border border-[color:var(--soft-line)] px-3 py-2 text-xs font-medium text-espresso transition-colors hover:bg-[rgba(167,179,154,0.14)]"
+          variant="secondary"
+          className="site-button--compact shrink-0"
         >
           {isEnglish ? "繁體中文" : "EN"}
-        </button>
+        </Button>
 
         <details className="group static md:hidden">
           <summary className="nav-summary relative z-[60] flex min-h-12 min-w-12 cursor-pointer items-center justify-center rounded-full bg-[ px-4 text-espresso ">
@@ -191,18 +192,12 @@ export function SiteFooter() {
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link
-              href="/"
-              className="outline-button inline-flex min-h-12 items-center justify-center px-5 py-3 text-sm tracking-[0.14em] uppercase hover:bg-[rgba(208,127,96,0.08)]"
-            >
+            <ButtonLink href="/" variant="primary">
               {isEnglish ? "Home" : "首頁"}
-            </Link>
-            <Link
-              href="/menu"
-              className="inline-flex min-h-12 items-center justify-center rounded-full border border-[color:var(--soft-line)] px-5 py-3 text-sm tracking-[0.14em] uppercase text-espresso hover:bg-[rgba(167,179,154,0.12)]"
-            >
+            </ButtonLink>
+            <ButtonLink href="/menu" variant="secondary">
               {isEnglish ? "Menu" : "菜單"}
-            </Link>
+            </ButtonLink>
           </div>
         </div>
 
