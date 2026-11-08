@@ -1,8 +1,7 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import { ButtonLink } from "@/app/components/button";
-
-import { InstagramSection } from "@/app/components/instagram-section";
 import { SiteFooter, SiteHeader } from "@/app/components/nav";
+import Instagram from "./components/instagram";
 import {
   ChairIcon,
   CornerSketchIllustration,
@@ -71,6 +70,8 @@ const openingCards = [
   },
 ];
 
+const menuCardRotations = ["-1deg", "0.8deg", "-0.6deg", "1.1deg"];
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-cream text-espresso">
@@ -99,6 +100,9 @@ export default function Home() {
               </div>
 
               <div className="space-y-5">
+                <h1 className="font-display max-w-xl text-5xl leading-tight text-espresso sm:text-6xl">
+                  <LanguageText zh="小小時光，點亮每一天。" en="Little moments, brighter days." />
+                </h1>
               
                 <div className="flex items-center gap-4">
                   <Image
@@ -229,7 +233,7 @@ export default function Home() {
 
         <section
           id="menu"
-          className="relative isolate overflow-hidden border-y border-[color:var(--soft-line)] bg-[url('/background.webp')] bg-cover bg-center"
+          className="relative isolate overflow-clip border-y border-[color:var(--soft-line)] bg-[url('/background.webp')] bg-cover bg-center"
         >
           <video
             aria-hidden="true"
@@ -272,11 +276,15 @@ export default function Home() {
               </ButtonLink>
             </div>
 
-            <div className="grid gap-5">
-              {menuCategories.map((category) => (
+            <div className="grid items-start gap-5">
+              {menuCategories.map((category, index) => (
                 <article
                   key={category.id}
-                  className="soft-card bg-white p-6 sm:p-8"
+                  className="soft-card sticky top-24 bg-white p-6 shadow-[0_12px_32px_rgba(74,58,47,0.12)] sm:p-8 lg:top-28"
+                  style={{
+                    zIndex: index + 1,
+                    rotate: menuCardRotations[index % menuCardRotations.length],
+                  }}
                 >
                   <div className="flex flex-col gap-3 border-b border-[color:var(--soft-line)] pb-5 sm:flex-row sm:items-end sm:justify-between">
                     <div>
@@ -311,7 +319,7 @@ export default function Home() {
                 </article>
               ))}
 
-              <article className="soft-card border-terracotta/35 bg-[rgba(249,246,238,0.76)] p-6 sm:p-8">
+              <article className="soft-card relative z-10 border-terracotta/35 bg-[rgba(249,246,238,0.76)] p-6 sm:p-8">
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                   <div>
                     <p className="section-kicker text-[0.68rem] text-terracotta">
@@ -331,7 +339,7 @@ export default function Home() {
           </div>
         </section>
 
-        <InstagramSection />
+        <Instagram />
 
         <section
           id="opening"

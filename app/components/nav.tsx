@@ -54,17 +54,11 @@ export function SiteHeader({ currentPath = "/" }: SiteHeaderProps) {
   return (
     <header className="sticky top-0 z-40 border-b border-[color:var(--soft-line)] bg-cream/95 backdrop-blur-sm">
       <div className="mx-auto flex w-full max-w-7xl items-start justify-between gap-4 px-5 py-4 sm:px-8 md:items-center">
-        <Link href="/" className="relative z-[60] min-w-0">
+        <Link href="/" className="font-display relative z-[60] min-w-0 text-2xl leading-tight text-espresso sm:text-3xl">
           {/* <span className="font-latin block text-[2.2rem] leading-none text-espresso sm:text-[2.7rem]">
             Dream Corner
           </span> */}
-          <img
-            src="/logo.svg"
-            alt="Dream Corner"
-      
-        
-            className="h-10 w-auto"
-          />       
+          Dream Corner
         </Link>
 
         <nav
@@ -82,7 +76,7 @@ export function SiteHeader({ currentPath = "/" }: SiteHeaderProps) {
                 key={item.href}
                 href={item.href}
                 aria-current={isCurrent ? "page" : undefined}
-                className={`rounded-full px-4 py-2 text-sm transition-colors hover:bg-[rgba(167,179,154,0.14)] hover:text-terracotta ${
+                className={`font-display rounded-full px-4 py-2 text-sm transition-colors hover:bg-[rgba(167,179,154,0.14)] hover:text-terracotta ${
                   isCurrent
                     ? "bg-[rgba(208,127,96,0.1)] text-terracotta"
                     : "text-espresso"

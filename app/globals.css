@@ -12,13 +12,10 @@
   --background: var(--cream);
   --foreground: var(--espresso);
   --font-body-stack:
-    var(--font-noto-sans-tc), "PingFang TC", "Microsoft JhengHei", "Segoe UI",
-    sans-serif;
-  --font-display-stack:
-    var(--font-noto-serif-tc), "PingFang TC", "Songti TC", serif;
-  --font-latin-stack:
-    var(--font-homemade-apple), "Avenir Next", Montserrat, "Helvetica Neue",
-    Arial, sans-serif;
+    "Arial Black", "Arial Narrow", system-ui, sans-serif;
+  --font-display-stack: var(--font-body-stack);
+
+
 }
 
 @theme inline {
@@ -42,7 +39,7 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-body-stack);
+  font-family:"Arial Black", "Arial Narrow", system-ui, sans-serif;;
 }
 
 a,
@@ -66,6 +63,15 @@ button:focus-visible {
 
 .font-display {
   font-family: var(--font-display-stack);
+}
+
+html:lang(zh) h1,
+html:lang(zh) h2,
+html:lang(zh) h3 {
+  font-family: var(--font-display-stack);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  text-wrap: balance;
 }
 
 .font-latin {
@@ -150,7 +156,7 @@ button:focus-visible {
 
 .soft-card {
   border: 1px solid var(--soft-line);
-  border-radius: 1.5rem;
+
 }
 
 .menu-paper {
