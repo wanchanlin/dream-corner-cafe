@@ -70,7 +70,14 @@ const openingCards = [
   },
 ];
 
-const menuCardRotations = ["-1deg", "0.8deg", "-0.6deg", "1.1deg"];
+const menuCardStickers = [
+  { src: "/stickers/coffee-bag.svg", alt: "Coffee bag sticker" },
+  { src: "/stickers/to-go-cup.svg", alt: "To-go cup sticker" },
+  { src: "/stickers/donut.svg", alt: "Donut sticker" },
+  { src: "/stickers/cinemon-roll.svg", alt: "Cinemon roll sticker" },
+  { src: "/stickers/cookie.svg", alt: "Cookie sticker" },
+  { src: "/stickers/croissant.svg", alt: "Croissant sticker" },
+];
 
 export default function Home() {
   return (
@@ -100,9 +107,6 @@ export default function Home() {
               </div>
 
               <div className="space-y-5">
-                <h1 className="font-display max-w-xl text-5xl leading-tight text-espresso sm:text-6xl">
-                  <LanguageText zh="小小時光，點亮每一天。" en="Little moments, brighter days." />
-                </h1>
               
                 <div className="flex items-center gap-4">
                   <Image
@@ -271,21 +275,32 @@ export default function Home() {
                 </p>
                 <p className="mt-2">{menuPreviewNotice}</p>
               </div> */}
-              <ButtonLink href="/menu" variant="primary" className="mt-6">
+              {/* <ButtonLink href="/menu" variant="primary" className="mt-6">
                 <LanguageText zh="前往飲品菜單" en="Open Menu" />
-              </ButtonLink>
+              </ButtonLink> */}
             </div>
 
             <div className="grid items-start gap-5">
               {menuCategories.map((category, index) => (
                 <article
                   key={category.id}
-                  className="soft-card sticky top-24 bg-white p-6 shadow-[0_12px_32px_rgba(74,58,47,0.12)] sm:p-8 lg:top-28"
-                  style={{
-                    zIndex: index + 1,
-                    rotate: menuCardRotations[index % menuCardRotations.length],
-                  }}
-                >
+                  className="soft-card relative sticky top-24 overflow-visible bg-white p-6 shadow-[0_12px_32px_rgba(74,58,47,0.12)] sm:p-8 lg:top-28"
+                  style={{ zIndex: index + 1 }}
+                > 
+                  <Image
+                    src={menuCardStickers[index % menuCardStickers.length].src}
+                    alt={menuCardStickers[index % menuCardStickers.length].alt}
+                    width={48}
+                    height={48}
+                    className="pointer-events-none absolute -left-3 -top-6 z-20 h-12 w-12 -rotate-12"
+                  />
+                   <Image
+                    src={menuCardStickers[index % menuCardStickers.length+3].src}
+                    alt={menuCardStickers[index % menuCardStickers.length+3].alt}
+                    width={48}
+                    height={48}
+                    className="pointer-events-none absolute right-22 -bottom-4 z-20 h-12 w-12 rotate-12"
+                  />
                   <div className="flex flex-col gap-3 border-b border-[color:var(--soft-line)] pb-5 sm:flex-row sm:items-end sm:justify-between">
                     <div>
                       <h3 className="font-display text-3xl text-espresso">
@@ -319,13 +334,13 @@ export default function Home() {
                 </article>
               ))}
 
-              <article className="soft-card relative z-10 border-terracotta/35 bg-[rgba(249,246,238,0.76)] p-6 sm:p-8">
+              <article className="soft-card border-terracotta/35 bg-[rgba(249,246,238,0.76)] p-6 sm:p-8">
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                   <div>
                     <p className="section-kicker text-[0.68rem] text-terracotta">
                       <LanguageText zh="菜單資訊" en="Menu Details" />
                     </p>
-                    <p className="mt-3 text-base leading-8 text-[rgba(74,58,47,0.85)]">
+                    <p className="mt-3 text-base leading-8 text-[#163D2E]">
                       <LanguageText zh="目前示意價格取自品牌指南中的 menu example。若之後有正式品項、冰熱選項或客製資訊，只要更新資料檔，就能同步反映到菜單頁。" en="Sample prices are based on the menu examples in the brand guide. When final items, serving options, or customizations are ready, they can be updated on the menu page." />
                     </p>
                   </div>
@@ -343,19 +358,18 @@ export default function Home() {
 
         <section
           id="opening"
-          className="mx-auto w-full max-w-7xl px-5 py-20 sm:px-8 md:py-24"
-        >
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
+          className="mx-auto w-full max-w-7xl px-5 py- sm:px-8 md:py-24  bg-[#163D2E] mb-20 rounded-lg shadow-[0_12px_32px_rgba(74,58,47,0.12)]">
+          <div className=" grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
             <div>
-              <p className="section-kicker text-xs text-terracotta">
+              <p className="section-kicker text-xs text-terracotta text-[#ffffff]">
                 <LanguageText zh="營業資訊" en="Opening Information" />
               </p>
-              <h2 className="font-display mt-5 text-4xl leading-tight text-espresso sm:text-5xl">
+              <h2 className="font-display mt-5 text-4xl leading-tight sm:text-5xl text-[#ffffff]">
                 <LanguageText zh="準備開張的消息，" en="Opening news is on its way;" />
                 <br />
                 <LanguageText zh="我們先把位置留好。" en="for now, save us a spot." />
               </h2>
-              <p className="mt-6 max-w-xl text-base leading-8 text-[rgba(74,58,47,0.82)] sm:text-lg">
+              <p className="mt-6 max-w-xl text-base leading-8 sm:text-lg text-[#ffffff]">
                 <LanguageText zh="為了避免杜撰資訊，這裡只放目前從素材中能確定的內容，並保留了地址、營業時間、聯絡方式與正式開幕日期的欄位。" en="We are sharing only confirmed details for now. Address, hours, contact information, and the opening date will be added once finalized." />
               </p>
             </div>
@@ -367,12 +381,12 @@ export default function Home() {
                   className="flex min-h-48 flex-col justify-between  p-6"
                 >
                   <div>
-                    <p className="section-kicker text-[0.72rem] text-terracotta">
+                    <p className="section-kicker text-[0.72rem] text-terracotta text-[#ffffff]">
                       <LanguageText zh={card.label} en={card.english} />
                     </p>
                   </div>
                   <div>
-                    <h3 className="font-display text-3xl leading-tight text-espresso">
+                    <h3 className="font-display text-3xl leading-tight text-[#ffffff]">
                       <LanguageText zh={card.value} en={card.valueEn} />
                     </h3>
                   </div>
@@ -390,9 +404,9 @@ export default function Home() {
 
 function InfoPill({ label, text }: { label: string; text: string }) {
   return (
-    <div className="soft-card bg-[rgba(255,255,255,0.56)] px-5 py-4">
+    <div className="soft-card bg-[#ffffff8f] px-5 py-4">
       <p className="section-kicker text-[0.68rem] text-terracotta">{label}</p>
-      <p className="mt-2 text-sm leading-6 text-[rgba(74,58,47,0.78)]">{text}</p>
+      <p className="mt-2 text-sm leading-6 text-[#4a3a2fc7]">{text}</p>
     </div>
   );
 }

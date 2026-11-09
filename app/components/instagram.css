@@ -1,5 +1,4 @@
 .reelmark-instagram {
-  --reelmark-paper: #f5f8ef;
   --reelmark-green: #08482d;
   --reelmark-ink: #101410;
   position: relative;
@@ -17,10 +16,11 @@
 .reelmark-frame {
   position: relative;
   width: 100%;
-  max-width: 1440px;
+  max-width: 1280px;
   height: auto;
   margin: 0 auto;
   overflow: hidden;
+  padding-inline: clamp(20px, 2.5vw, 32px);
   padding-bottom: clamp(48px, 6vw, 90px);
 }
 
@@ -31,7 +31,7 @@
   align-items: center;
   justify-content: space-between;
   height: 90px;
-  padding: 28px clamp(24px, 2.6vw, 38px) 0;
+  padding: 28px 0 0;
 }
 
 .reelmark-brand { display: inline-flex; align-items: center; gap: 10px; color: var(--reelmark-green); font-size: 21px; line-height: 1; font-weight: 800; letter-spacing: -.045em; }
@@ -44,7 +44,7 @@
 .reelmark-instagram .site-button.reelmark-top-follow:hover, .reelmark-instagram .site-button.reelmark-follow-button:hover { background: #17613f; color: #fff; }
 .reelmark-top-follow svg, .reelmark-follow-button svg { width: 16px; height: 16px; }
 
-.reelmark-intro { position: relative; z-index: 3; padding: 24px 20px 0; text-align: center; }
+.reelmark-intro { position: relative; z-index: 3; padding: 24px 0 0; text-align: center; }
 .reelmark-badge { display: inline-flex; align-items: center; gap: 9px; min-height: 37px; padding: 7px 19px; border-radius: 999px; background: #dae7c7; color: var(--reelmark-green); font-size: 16px; font-weight: 600; }
 .reelmark-badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--reelmark-green); }
 .reelmark-intro h2 { max-width: 1050px; margin: 22px auto 0; font-family: "Arial Black", "Arial Narrow", system-ui, sans-serif; font-size: clamp(53px, 6.15vw, 88px); line-height: 1.045; font-weight: 900; letter-spacing: -.05em; text-wrap: balance; }
@@ -86,12 +86,12 @@
 
 @media (max-width: 820px) {
   .reelmark-frame { padding-bottom: 38px; }
-  .reelmark-topbar { height: 72px; padding: 17px 20px 0; }
+  .reelmark-topbar { height: 72px; padding: 17px 0 0; }
   .reelmark-brand { font-size: 17px; }
   .reelmark-brand-mark { width: 31px; height: 31px; }
   .reelmark-brand-mark svg { width: 18px; height: 18px; }
   .reelmark-instagram .site-button.reelmark-top-follow { min-height: 36px; padding: 7px 13px; font-size: 12px; }
-  .reelmark-intro { padding: 36px 21px 0; }
+  .reelmark-intro { padding: 36px 0 0; }
   .reelmark-badge { min-height: 33px; padding: 6px 14px; font-size: 12px; }
   .reelmark-intro h2 { max-width: 620px; margin-top: 20px; font-size: clamp(39px, 8vw, 65px); line-height: 1.07; }
   .reelmark-intro p { max-width: 540px; margin-top: 19px; font-size: clamp(15px, 2.8vw, 18px); }
