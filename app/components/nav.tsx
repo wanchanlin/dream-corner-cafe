@@ -7,7 +7,7 @@ import { useSiteLanguage } from "@/app/components/language";
 
 const navItems = [
   { href: "/story", label: "品牌故事", english: "Story" },
-  { href: "/menu", label: "菜單", english: "Menu" },
+  // { href: "/menu", label: "菜單", english: "Menu" },
   { href: "/beans", label: "咖啡豆", english: "Beans" },
   { href: "/#opening", label: "營業資訊", english: "Opening" },
 ];
@@ -58,7 +58,7 @@ export function SiteHeader({ currentPath = "/" }: SiteHeaderProps) {
           {/* <span className="font-latin block text-[2.2rem] leading-none text-espresso sm:text-[2.7rem]">
             Dream Corner
           </span> */}
-          Dream Corner
+        <img src="/logo.svg" alt="Dream Corner Logo" className="h-8 w-auto sm:h-8" />
         </Link>
 
         <nav
@@ -67,7 +67,7 @@ export function SiteHeader({ currentPath = "/" }: SiteHeaderProps) {
         >
           {navItems.map((item) => {
             const isCurrent =
-              (currentPath === "/menu" && item.href === "/menu") ||
+              // (currentPath === "/menu" && item.href === "/menu") ||
               (currentPath === "/story" && item.href === "/story") ||
               (currentPath === "/beans" && item.href === "/beans");
 
